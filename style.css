@@ -119,20 +119,29 @@ textarea:not([data-value=""])+label{
 
 [tab-content]:not([active]) {
     opacity: 0;
-    z-index: 0;
     
     height: 0;
 }
 [tab-content][hidden] {
     display: block !important;
+    z-index: -1;
+}
+[tab-content][hidden] > *{
+    display: none;
 }
 [tab-content] {
-    overflow: hidden;
     transition: .5s opacity;
-    z-index:10;
     position: absolute;
-    /*! inset: 1rem; */
     color: #fff;
+    border-left: none;
+    border-right: none;
+    inset: 0;
+    bottom: auto;
+    padding: inherit;
+}
+[tab-content][active]:empty {
+    bottom: 0;
+    background: url(robot.svg) center/33% auto no-repeat;
 }
 [tab-button] {
     color:#fff;
@@ -170,6 +179,7 @@ summary {
   position: relative;
   font-size:1.1em;
   font-weight: 500;
+  transition: .3s ease-in-out margin;
 }
 summary::marker {
   content: none;
@@ -193,6 +203,9 @@ summary::before,summary::after {
 summary::after {
   transform: rotateZ(90deg);
 }
+details[open] summary {
+    margin-bottom:1rem;
+}
 details[open] summary::before,details[open] summary::after {
     color:var(--accent-color);
 }
@@ -208,17 +221,6 @@ details {
   padding:1.125rem 6rem;
   border-bottom: 2px solid currentColor;
   font-size:1.25rem;
-}
-
-details > div {
-    height:0;
-    overflow: hidden;
-    transition:.3s all;
-    display: block;
-}
-details[open] > div {
-    height:100%;
-    overflow: hidden;
 }
 
 .partner-logo {
@@ -494,14 +496,18 @@ details[open] > div {
   max-width: 80%;
   padding: 1rem;
   border-radius: 1rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:1.25rem;
 }
-.chat-message .prompt {
+.chat-message .sent {
   float: right;
   border-bottom-right-radius: 0;
   background:#1D1D2B;
   
 }
-.chat-message .response {
+.chat-message .recieved {
   float: left;
   background: var(--shadow-color);
   border-top-left-radius: 0;
@@ -513,18 +519,33 @@ details[open] > div {
   height: 1rem;
 }
 
-.chat input {
+[chat-input] {
   appearance: none;
   background: none;
   border: none;
-  color: inherit;
+  color: white;
   flex: 1 1 auto;
 }
 .chat input:focus {
   outline: none;
 }
-.chat button {
+[chat-button] {
   background: var(--shadow-color);
   padding: .5rem;
   border-radius: .5rem;
+}
+.top-line::before,.bottom-line::after {
+  content: '';
+  display: block;
+  height: 1px;
+  z-index: 0;
+  position: absolute;
+  box-shadow: 0 0 .5rem 1px var(--shadow-color);
+  background: #6f4dff55;
+}
+.top-line::before {
+  inset: -1px 2px auto 2px;
+}
+.bottom-line::after {
+  inset: auto 2px -1px 2px;
 }
