@@ -512,3 +512,19 @@ details[open] > div {
   clear: both;
   height: 1rem;
 }
+
+.chat input {
+  appearance: none;
+  background: none;
+  border: none;
+  color: inherit;
+  flex: 1 1 auto;
+}
+.chat input:focus {
+  outline: none;
+}
+.chat button {
+  background: var(--shadow-color);
+  padding: .5rem;
+  border-radius: .5rem;
+}
