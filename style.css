@@ -49,10 +49,6 @@ h1 +div {
 .accent {
     color:#fff;
 }
-#hero .container {
-}
-#hero {
-}
 .btn {
     background:var(--accent-color);
     color: white;
