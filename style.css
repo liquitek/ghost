@@ -149,6 +149,8 @@ textarea:not([data-value=""])+label{
     margin: .5rem 0;
     margin-inline-end: 1.5rem;
     transition: .3s ease all;
+    display: flex;
+    align-items: center;
 }
 
 a[tab-button] {
