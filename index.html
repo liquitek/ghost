@@ -731,6 +731,8 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          handleResize();
          function hadleMove(e){
             if (state&&drag) {
+               e.preventDefault();
+               e.stopPropagation();
                t+=e.clientX-xPrev;
                el.dataset.tx=t;
                !downTarget.dataset.noclick&&(downTarget.dataset.noclick='true');
@@ -740,6 +742,11 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          }
          function handleDown(e){
             if(state){
+               e.preventDefault();
+               e.stopPropagation();
+               if (e.target.hasPointerCapture(e.pointerId)) {
+                     e.target.releasePointerCapture(e.pointerId);
+               }
                drag=true;
                downTarget=e.target;
                xPrev=e.clientX;
@@ -747,6 +754,8 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          }
          function handleUp(e){
                if (state&&drag) {
+                  e.preventDefault();
+               e.stopPropagation();
                   setTimeout(()=>{downTarget.removeAttribute('data-noclick');downTarget=null;},100);
                   drag=false;
                } 
