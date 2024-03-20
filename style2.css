@@ -484,7 +484,7 @@ details {
 }
 .quote-slider .name {
     color:#fff;
-    font-size:1.5rem;
+    font-size:1.143rem;
     margin-bottom:.5rem;
 }
 .quote-slider .title {
@@ -942,7 +942,11 @@ footer::before {
     #contacts {
     font-size:1.5rem;
 }
-    
+.quote-slider .name {
+
+    font-size:1.5rem;
+
+}    
 }
 @media (min-width:1200px) {
     [tabs] {
