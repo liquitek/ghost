@@ -1,23 +1,56 @@
 <!doctype html>
 <html lang="en">
    <head>
+      <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Bootstrap CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
       <link rel="stylesheet" href="style.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
       <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
       <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+
    </head>
    <body>
-    <section id="hero" class="position-relative">
-       <div style="position: absolute;inset: 0 0 0 40%;background: url(foto.png) 45% center/auto auto no-repeat;width: 60%;"></div>
-       <div class="container-xxl position-relative ">
-          <div class="row align-items-center min-vh-100">
-             <div class="col col-md-6">
+      <section id="hero" class="overflow-x-hidden position-relative min-vh-100 d-flex flex-column">
+         <nav class="navbar navbar-expand-lg position-relative" style="z-index: 100;">
+            <div class="container-xxl">
+              <a href="#" class="navbar-brand col-8 col-lg-4"><img class="d-sm-none" src="logos.svg">
+               <img class="d-none d-sm-block" src="logo-d.svg"></a><button onfocus="blur()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+<div tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start flex-lg-row align-items-lg-center">
+   <div class="offcanvas-header">
+      <a href="#" class="navbar-brand"><img class="d-sm-none" src="logos.svg">
+         <img class="d-none d-sm-block" src="logo-d.svg"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+   <div class="p-4 p-lg-0 offcanvas-body"><ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="#quotes-slider" class="nav-link">Отзывы</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#cases">Кейсы</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#team">Команда</a>
+                  </li>
+                </ul><a href="#form" class="btn px-0 mt-4 me-auto fs-5 d-lg-none">Оставить заявку</a></div><a href="#form" class="btn ms-auto d-none d-lg-inline-flex">Обсудить задачу</a></div></div>
+              
+          </nav>         
+         
+<div style="flex: 1 1 auto;" class="container-xxl  d-flex">
+          <div class="row flex-column flex-md-row align-items-center flex-wrap">
+             <div class="col order-md-3 hero-image-wrapper"><div class="hero-image"></div></div><div class="col  position-relative col-md-7 col-lg-6" style="z-index: 1;">
                 <h1>Интеграция ИИ в бизнес-
                    процессы вашей компании
                 </h1>
@@ -37,7 +70,7 @@
             </div>
          </div>
          <div class="container-xxl px-0">
-          <div data-splide='{"type":"loop","perPage":2,"gap":"3.5rem","padding":{"left":".5rem","right":"calc(58vw - (var(--bs-container)*0.5))"},"arrows":false}' class="problem-slider splide">
+          <div data-splide='{"mediaQuery":"min","gap":"2rem","type":"loop","arrows":false,"padding":{"left":".5rem","right":"33%"},"breakpoints":{"768":{"perPage":2,"gap":"3.5rem","padding":{"left":".5rem","right":"calc(58vw - (var(--bs-container)*0.5))"}}}}' class="problem-slider splide">
            <div class="splide__track">
               <ul class="splide__list">
                  <li class="splide__slide">
@@ -74,7 +107,7 @@
       <div class="spacer"></div>
        <div class="container-xxl">
           <div  class="row justify-content-center">
-             <div class="col col-md-8 text-center">
+             <div class="col col-lg-8 text-center">
                 <h2 class="mb-4/5">Мы вам поможем!</h2>
                 <div style="" class="mb-6">Просто оставьте заявку и с вами свяжется наш менеджер:
                    проконсультирует по всем вопросам, сделает расчёт затрат
@@ -82,21 +115,21 @@
                 </div>
              </div>
              <div class="col-12">
-                <form onsubmit="event.preventDefault()" onclick="event.target.blur()">
-                   <div class="row mb-4/5">
-                      <div class="col-sm-6 position-relative"><input id="preference" type="text" onchange="event.target.dataset.value = event.target.value" data-value=""><label for="preference">Удобный способ связи</label></div>
-                      <div class="col-sm-6 position-relative"><input type="text" id="income" data-value=""><label for="income">Средняя прибыль компании в год</label></div>
-                   </div>
-                   <div style="" class="row mb-4/5">
-                      <div class="col position-relative"><textarea id="message" data-value=""></textarea><label for="message">Опишите вашу проблему</label></div>
-                   </div>
-                   <button class="btn" type="submit">
-                      Отправить 
-                      <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none">
-                         <path d="M13.1943 5.87027L6.98175 2.77712C3.54168 1.06426 1.82165 0.207829 1.0327 1.08494C0.245346 1.96205 1.09339 3.79381 2.79106 7.45733C3.14242 8.21554 3.31809 8.59292 3.31809 8.9996C3.31809 9.40627 3.14242 9.78538 2.79106 10.5419C1.09339 14.2054 0.245345 16.0389 1.03429 16.9143C1.82165 17.7931 3.54168 16.9349 6.98335 15.2221L13.1943 12.1289C15.9061 10.7779 17.2636 10.1024 17.2636 8.9996C17.2636 7.89675 15.9077 7.22125 13.1943 5.87027Z" fill="currentColor"></path>
-                      </svg>
-                   </button>
-                </form>
+               <form onsubmit="event.preventDefault()" onclick="event.target.blur()">
+                  <div class="row mb-4/5">
+                     <div class="col-12 mb-4/5 mb-lg-0 col-lg-6 position-relative"><input id="preference" type="text" onchange="event.target.dataset.value = event.target.value" data-value=""><label for="preference">Удобный способ связи</label></div>
+                     <div class="col-12 col-lg-6 position-relative"><input type="text" id="income" data-value=""><label for="income">Средняя прибыль компании в год</label></div>
+                  </div>
+                  <div style="" class="row mb-4/5">
+                     <div class="col position-relative"><textarea id="message" data-value="" style="height: 231px;"></textarea><label for="message">Опишите вашу проблему</label></div>
+                  </div>
+                  <button class="btn" type="submit">
+                     Отправить 
+                     <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <path d="M13.1943 5.87027L6.98175 2.77712C3.54168 1.06426 1.82165 0.207829 1.0327 1.08494C0.245346 1.96205 1.09339 3.79381 2.79106 7.45733C3.14242 8.21554 3.31809 8.59292 3.31809 8.9996C3.31809 9.40627 3.14242 9.78538 2.79106 10.5419C1.09339 14.2054 0.245345 16.0389 1.03429 16.9143C1.82165 17.7931 3.54168 16.9349 6.98335 15.2221L13.1943 12.1289C15.9061 10.7779 17.2636 10.1024 17.2636 8.9996C17.2636 7.89675 15.9077 7.22125 13.1943 5.87027Z" fill="currentColor"></path>
+                     </svg>
+                  </button>
+               </form>
              </div>
           </div>
        </div>
@@ -105,12 +138,12 @@
       <div class="spacer"></div>
           <div class="container-xxl">
              <div class="row">
-                <div class="col-auto mx-auto mb-7">
+                <div class="col-auto mx-auto mb-7 text-center d-none d-md-block">
                    <h2><em>Ваши слова</em> — наша <em>основная</em> мотивация</h2>
                 </div>
              </div>
           </div>
-          <div data-splide='{"type":"loop","perPage":2,"gap":"2rem","padding":{"left":"calc(50vw - (var(--bs-container)*0.5))","right":"calc(50vw - (var(--bs-container)*0.5))"},"arrows":false}' class="quote-slider splide">
+          <div data-splide='{"mediaQuery":"min","type":"loop","gap":"1rem","padding":{"left":"5%","right":"33%"},"arrows":false,"breakpoints":{"768":{"perPage":2,"gap":"2rem","padding":{"left":"max(calc(50vw - (var(--bs-container)*0.5)),5%)","right":"max(calc(50vw - (var(--bs-container)*0.5)),5%)"}}}}' class="quote-slider splide">
             <div class="splide__track">
                <ul class="splide__list">
                   <li class="splide__slide">
@@ -241,15 +274,15 @@
       <div class="spacer"></div>
       <div class="container-xxl">
          <div class="row">
-            <div class="col col-md-6 m-auto text-center">
+            <div class="col col-lg-6 m-auto text-center">
                <h2 class="pb-2 mb-5">Наш <em>нейро-ассистент</em> расскажет вам о наших <em>кейсах!</em></h2>
             </div>
             <div class="col-12">
-               <div tabs="" class="d-flex">
-                  <div tab-buttons="" style="flex: 0 0 25%;overflow-y: auto;scrollbar-width: thin;overflow-x: visible;direction: rtl;scrollbar-color: #664DFF #fff3;scroll-behavior: smooth;" class="d-flex flex-column position-relative">
-                     <div style="direction: ltr;" class="d-flex flex-column gap-3 p-2 ps-4 pe-0"><a  href="#" data-id="1" tab-button="" active=""><img src="3.png" width="71" class="rounded-circle align-top me-3">Typhoon Roaster</a><a  href="#" data-id="2" tab-button=""><img src="2.png" width="71" class="rounded-circle align-top me-3">РЖД</a><a  href="#" data-id="3" tab-button=""><img src="1.png" width="71" class="rounded-circle align-top me-3">Тинькофф</a><a  href="#" data-id="4" tab-button=""><img src="4.png" width="71" class="rounded-circle align-top me-3">GOST.Pay</a><a href="#" data-id="5" tab-button=""><img src="5.png" width="71" class="rounded-circle align-top me-3">ТочкаИмпро</a><a  href="#" data-id="6" tab-button=""><img src="https://placehold.co/140x140" width="71" class="rounded-circle align-top me-3">Lorem Ipsum</a></div>
+               <div tabs="" class="d-flex flex-lg-row flex-column-reverse">
+                  <div tab-buttons="" style="flex: 0 0 25%;overflow-y: auto;scrollbar-width: thin;direction: rtl;scrollbar-color: #664DFF #fff3;scroll-behavior: smooth;" class="d-flex pt-5 pb-3 py-lg-0 flex-column position-relative">
+                     <div style="direction: ltr;" class="d-flex flex-lg-column gap-3 p-2 ps-4 pe-0"><a draggable="false" href="#" data-id="1" tab-button="" active=""><img src="3.png" width="71" class="rounded-circle align-top me-3">Typhoon Roaster</a><a  draggable="false" href="#" data-id="2" tab-button=""><img src="2.png" width="71" class="rounded-circle align-top me-3">РЖД</a><a  draggable="false" href="#" data-id="3" tab-button=""><img src="1.png" width="71" class="rounded-circle align-top me-3">Тинькофф</a><a  draggable="false" href="#" data-id="4" tab-button=""><img src="4.png" width="71" class="rounded-circle align-top me-3">GOST.Pay</a><a draggable="false" href="#" data-id="5" tab-button=""><img src="5.png" width="71" class="rounded-circle align-top me-3">ТочкаИмпро</a><a draggable="false"  href="#" data-id="6" tab-button=""><img src="https://placehold.co/140x140" width="71" class="rounded-circle align-top me-3">Lorem Ipsum</a></div>
                   </div>
-                  <div tabs-panel="" style="flex:0 0 75%" class="d-flex flex-column chat">
+                  <div tabs-panel="" class="d-flex flex-column chat">
                      <div class="p-4 position-relative bottom-line fs-5">Мы открыто описываем все наши кейсы. Вы можете спросить у нейро-ассистента 
                         всё, что хотите узнать о данном проекте.
                      </div>
@@ -278,7 +311,7 @@
     <div class="spacer"></div>
     <div class="container-xxl">
        <div style="align-content: start;" class="row justify-content-center">
-          <div class="col col-md-6 text-center">
+          <div class="col col-lg-6 text-center">
              <h2 class="mb-5 pb-3">Быстрые <em>ответы</em> на <em>частые</em> вопросы</h2>
              
           </div>
@@ -299,7 +332,7 @@
         <div class="col col-md-8 text-center">
            <h2 class="mb-4/5">Наши <em>партнёры</em></h2>
         </div>
-        <div class="col-12 d-flex flex-wrap">
+        <div class="col-12 d-flex flex-wrap justify-content-center">
            <div class="partner-logo">
               <svg width="200" height="96" viewBox="0 0 200 96" xmlns="http://www.w3.org/2000/svg" fill="var(--logo-fill)">
                  <path d="M75.4414 47.1617C75.4414 52.8842 79.0862 56.8742 84.1367 56.8742C89.1873 56.8742 92.8321 52.8842 92.8321 47.1617C92.8321 41.4392 89.1873 37.4492 84.1367 37.4492C79.0862 37.4492 75.4414 41.4392 75.4414 47.1617ZM89.4997 47.1617C89.4997 51.2567 87.2868 53.908 84.1367 53.908C80.9866 53.908 78.7737 51.2567 78.7737 47.1617C78.7737 43.0667 80.9866 40.4155 84.1367 40.4155C87.2868 40.4155 89.4997 43.0667 89.4997 47.1617Z"></path>
@@ -404,19 +437,17 @@
  будет для вас <em>простым</em>!</h2>
         </div>
         <div class="col-12">
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-        <ul class="fancy-bullets"><li>Оставьте заявку на сайте, мы свяжемся с вами в течении рабочего дня и предложим удобный способ коммуникации (встреча, online-звонок и т.д.)</li><li>На встрече с менеджером вы подробнее узнаете про наши услуги интеграции и получите ответы на вопросы. Также 
-наш менеджер проведёт короткую диагностику вашего бизнеса, в результате которой мы поймем, сможем ли быть 
-полезны для вас</li><li>При положительном результате, будет второй, подробный созвон с нашим бизнес-аналитиком, который уже детально разберет все процессы, и составит план работ, ресурсных затрат, ЦКП, и смету для утверждения</li><li>После утверждения сметы, мы переходим к составлению договора, так же его согласовываем и подписываем</li><li>Далее идет оплата и мы начинаем работу, запрашиваем всю необходимую информацию и доступы</li><li>Закончив интеграцию мы демонстрируем вам финальный продукт, обучаем работе с ним и обеспечиваем полную поддержку и доработки до момента полной автономной работы</li><li>Дружим еще долгие годы, внедряя ИИ в новые процессы, потому что их потенциал безграничен :)</li></ul></div>
+    <div data-splide='{"arrows":false,"padding":"1rem","autoHeight":true,"height":"75vh","mediaQuery":"min","type":"loop","direction":"ttb","breakpoints": {"576": {
+			"destroy": true}}}' class="splide fb-slider">
+      <div class="splide__track">
+         <ul class="fancy-bullets splide__list"><li class="splide__slide">Оставьте заявку на сайте, мы свяжемся с вами в течении рабочего дня и предложим удобный способ коммуникации (встреча, online-звонок и т.д.)</li><li class="splide__slide">На встрече с менеджером вы подробнее узнаете про наши услуги интеграции и получите ответы на вопросы. Также 
+            наш менеджер проведёт короткую диагностику вашего бизнеса, в результате которой мы поймем, сможем ли быть 
+            полезны для вас</li><li class="splide__slide">При положительном результате, будет второй, подробный созвон с нашим бизнес-аналитиком, который уже детально разберет все процессы, и составит план работ, ресурсных затрат, ЦКП, и смету для утверждения</li><li class="splide__slide">После утверждения сметы, мы переходим к составлению договора, так же его согласовываем и подписываем</li><li class="splide__slide">Далее идет оплата и мы начинаем работу, запрашиваем всю необходимую информацию и доступы</li><li class="splide__slide">Закончив интеграцию мы демонстрируем вам финальный продукт, обучаем работе с ним и обеспечиваем полную поддержку и доработки до момента полной автономной работы</li><li class="splide__slide">Дружим еще долгие годы, внедряя ИИ в новые процессы, потому что их потенциал безграничен :)</li></ul>
+      </div>
+    </div>
+        
+</div>
+
      </div>
   </div>
 </section>
@@ -428,7 +459,7 @@
               <h2 class="mb-5">Мы собрали команду <em>экспертов</em>, которую хотим с гордостью представить</h2>
            </div>
         </div>
-          <div data-splide='{"type":"loop","autoWidth":true,"height":"650px","gap":"1rem","focus":"center","arrows":false,"padding":{"left":"25%","right":"calc(min(var(--bs-container),100vw)*0.33 + 50vw - min(var(--bs-container),100vw)*0.5)"},"cloneStatus":false}' class="team-slider splide">
+          <div data-splide='{"autoWidth":false,"heightRatio":"1.5","mediaQuery":"min","type":"loop","gap":"1rem","arrows":false,"padding":{"left":0,"right":"33.33%"},"breakpoints":{"768":{"autoWidth":true,"focus":"center","padding":{"left":"25%","right":"calc(min(var(--bs-container),100vw)*0.33 + 50vw - min(var(--bs-container),100vw)*0.5)"},"height":"auto","cloneStatus":false}}}' class="team-slider splide">
             <div class="splide__track">
                <ul class="splide__list">
                   <li class="splide__slide">
@@ -441,7 +472,7 @@
                   <li class="splide__slide">
                    <div class="team-slide">
                     <div class="slide-bg-layer"></div>
-                     <img src="exp2_1.png" style="object-fit:contain;min-height:562.5px;">
+                     <img src="exp2_1.png">
                      <div class="slide-layer"><div class="name">Сайковский Иван</div>
                      <div class="title">Генеральный директор</div>
                      <div class="about"><span>7 лет в маркетинге<br>Предприниматель, маркетолог</span><div class="mt-2">РЖД, Тинькофф, ArtMasters, 
@@ -473,42 +504,80 @@
      
 </section>
 <section id="contacts">
-  <div class="spacer"></div>
-  <div class="container-fluid" style="max-width:80%">
-    <div class="row">
-      <div class="col-auto col-md-5">
-        <div class="row">
-          <div class="col-12 d-flex flex-column">
-            <div class="pb-3 mb-4 mt-5"><em>ИНФОРМАЦИЯ</em></div>
-            <div class="d-flex flex-nowrap mb-4/5">
-              <div class="col-6 px-0">
-                <div class="pb-1 mb-3"><em>ИНН</em></div>
-                <div>246525853385</div>
-              </div>
-              <div class="col-6 px-0">
-                <div class="pb-1 mb-3"><em>ОГРНИП<em></em></em></div>
-                <div>320246800036639</div>
-              </div>
-            </div>
-            <div class="mb-2"><em>Компания является резидентом</em></div>
-            <div class="mb-5 pb-3">«Агенства инновационного развития»</div>
-            <div class="mb-1"><em>+7 (913) 532-31-67</em></div>
-            <div class="mb-1"><em><a href="mailto:info@ascender.space">info@ascender.space</a></em></div>
-            <div class="mb-1"><a href="#" target="_blank">Политика конфинденциальности</a></div>
-            <div><a href="#" target="_blank">Условия оферты</a></div>
-          </div>
-        </div>
-      </div>
+   <div class="spacer"></div>
+   <div class="container-fluid" style="">
+     <div class="row flex-column-reverse flex-lg-row">
+       <div class="offset-xl-1 col-auto col-lg-5">
+         <div class="vstack">
+             <div class="pb-3 mb-4 mt-5"><em>ИНФОРМАЦИЯ</em></div>
+             <div class="hstack mb-4/5 flex-wrap gap-4">
+               <div class="col">
+                 <div class="pb-1 mb-3"><em>ИНН</em></div>
+                 <div>246525853385</div>
+               </div>
+               <div class="col">
+                 <div class="pb-1 mb-3"><em>ОГРНИП<em></em></em></div>
+                 <div>320246800036639</div>
+               </div>
+             </div>
+             <div class="mb-2"><em>Компания является резидентом</em></div>
+             <div class="mb-5 pb-3">«Агенства инновационного развития»</div>
+             <div class="mb-1"><em>+7 (913) 532-31-67</em></div>
+             <div class="mb-1"><em><a href="mailto:info@ascender.space">info@ascender.space</a></em></div>
+             <div class="mb-1"><a href="#" target="_blank">Политика конфинденциальности</a></div>
+             <div><a href="#" target="_blank">Условия оферты</a></div>
+           </div>
+       </div><div class="col-lg-7 col-xl-6 col-xxl-5">
+         <figure>
+             
+             
+             
+             
+             
+             
+             
+             
+           <img alt="" src="map.png" class="img-fluid rounded-4 mb-2">
+ <figcaption>г. Санкт-Петербург, ул. Казанская, д. 7Б</figcaption></figure>
+       </div>
+    </div>
    </div>
-  </div>
-
-</section>
+ 
+ </section>
+ <footer class="position-relative">
+   <div class="container-fluid mt-5">
+      
+   <nav class="navbar"><a href="#" class="navbar-brand me-4">
+         <img src="logos.svg" alt="logo">
+      </a><div class="hstack flex-fill gap-3 me-auto"><div class="hstack gap-3 gap-lg-5 mx-auto"><a href="#quotes-slider" class="nav-link">Отзывы</a><a href="#cases" class="nav-link">Кейсы</a><a href="#faq" class="nav-link ">FAQ</a><a href="#team" class="nav-link">Команда</a></div><a href="#form" class="btn ms-5 me-auto flex-shrink-0">Оставить заявку</a></div></nav></div>
+   
+ </footer>
 <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
     <script>
+      let viewport;
        var p = new Splide('.problem-slider').mount();
        var s = new Splide( '.quote-slider' ).mount();
-
-       var t = new Splide('.team-slider')
+       var b = new Splide('.fb-slider').mount();
+       var t = new Splide('.team-slider');
+       t.on("ready",()=>{
+         viewport=window.innerWidth;
+       })
+       onresize = () => {
+         if ((viewport >= 768) && (window.innerWidth < 768)) {
+            t.destroy({"completely":true});
+            t.mount();
+            t.on("click",(e)=>{
+               t.go(e.index)
+            });
+         }
+         if ((viewport < 768) && (window.innerWidth >= 768)) {
+            t.destroy({"completely":true});
+            t.mount();
+            t.on("click",(e)=>{
+               t.go(e.index)
+            });
+         }
+       }
        t.on("click",(e)=>{
         t.go(e.index)
        });
@@ -518,7 +587,9 @@
        p.on("click",(e)=>{
         p.go(e.index)
        });
-
+       b.on("click",(e)=>{
+        b.go(e.index)
+       });
       t.on("ready",()=>{
         setTimeout(()=>t.go(1),500);
       })
@@ -528,23 +599,27 @@
     <script>
        document.querySelectorAll("[tabs]").forEach(e=>{
          e.addEventListener("click",(e)=>{
-          
            e.preventDefault();
            e.stopPropagation();
+           if (e.target.dataset.noclick) return;
            if (!e.target.getAttributeNode('tab-button')) return;
            if (e.target.getAttributeNode('active')) return;
-           console.log(e.target.offsetParent);
+
            var panel = e.currentTarget.querySelector('[tabs-panel]')
            panel.querySelectorAll('[tab-content]').forEach(e=>{
              e.removeAttribute('active');
              e.setAttribute('hidden','');
            });
            e.currentTarget.querySelectorAll('[tab-button]').forEach(e=>e.removeAttribute('active'));
-           e.target.parentElement.parentElement.addEventListener('scrollend',()=>
-            e.target.toggleAttribute('active'),{once:true});
-           e.target.parentElement.parentElement.scrollBy(0,1);
-           e.target.parentElement.parentElement.scrollBy(0,-1);
-           e.target.parentElement.parentElement.scrollTo(0,e.target.offsetTop-8);
+           var scroller=e.target.parentElement.parentElement;
+           var toggle = ()=>{e.target.toggleAttribute('active')} 
+           if (scroller.scrollHeight>scroller.clientHeight) {
+            scroller.addEventListener('scrollend',toggle,{once:true});
+            scroller.scrollBy(0,1);
+            scroller.scrollBy(0,-1);
+            scroller.scrollTo(0,e.target.offsetTop-8);
+           } else toggle();
+           
            panel.querySelector(`[data-id="${e.target.dataset.id}"`).toggleAttribute("active");
            panel.querySelector(`[data-id="${e.target.dataset.id}"`).toggleAttribute('hidden');
            
@@ -625,6 +700,60 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
   	document.querySelector('[chat-button]').click();
   }
 })
+    </script>
+    <script>
+      function Tracker(el) {
+         addEventListener("resize",handleResize);
+         var xPrev;
+         const breakpoint = 992;
+         var drag=false;
+         var t=0;
+         var state=false;
+         function handleResize(){
+
+            if ((window.innerWidth<breakpoint)&&!state){
+               if(!state) {
+                  state=!state;
+                  t=0;
+                  xPrev=undefined;
+                  drag=false;
+               }
+            } else {
+               if (window.innerWidth>=breakpoint) {
+               state=false;
+               el.firstElementChild.style.transform="";
+               }
+            }
+         };
+         handleResize();
+         function hadleMove(e){
+            if (state&&drag) {
+               t+=e.clientX-xPrev;
+               el.dataset.tx=t;
+               !e.target.dataset.noclick&&(e.target.dataset.noclick='true');
+               el.firstElementChild.style.transform="translateX("+t+"px)";
+            }
+               state&&(xPrev=e.clientX);
+         }
+         function handleDown(e){
+            if(state){
+               drag=true;
+               
+            }
+         }
+         function handleUp(e){
+               if (state&&drag) {
+                  var t = e.target;
+                  setTimeout(()=>t.removeAttribute('data-noclick'),100);
+                  drag=false;
+               }
+            }
+         el.addEventListener("pointermove",hadleMove);
+         el.addEventListener("pointerdown",handleDown);
+         el.addEventListener("pointerup",handleUp);
+         }
+         
+         new Tracker(document.querySelector("[tab-buttons]"));
     </script>
  </body>
  
