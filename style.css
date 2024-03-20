@@ -621,7 +621,7 @@ input:focus::placeholder {
   border: none;
   color: white;
   flex: 1 1 0;
-  max-width: 80%;
+  min-width: 0;
 }
 .chat input:focus {
   outline: none;
