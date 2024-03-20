@@ -609,15 +609,19 @@ input:hover::placeholder {
     opacity: 1;
 }
 input:focus::placeholder {
+
     opacity: 0;
 }
-
+[chat-input]::placeholder {
+    text-overflow: ellipsis;
+}
 [chat-input] {
   appearance: none;
   background: none;
   border: none;
   color: white;
-  flex: 1 1 auto;
+  flex: 1 1 0;
+  max-width: 80%;
 }
 .chat input:focus {
   outline: none;
