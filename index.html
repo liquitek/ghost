@@ -760,6 +760,7 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
                   drag=false;
                } 
             }
+         el.addEventListener("touchmove",(event)=>event.preventDefault())
          el.addEventListener("pointermove",hadleMove);
          el.addEventListener("pointerdown",handleDown);
          el.addEventListener("pointerup",handleUp);
