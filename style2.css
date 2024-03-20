@@ -186,7 +186,13 @@ textarea+label {
     -webkit-transform: translateY(33.33%);
             transform: translateY(33.33%);
 }
-
+#form form input:not([type="checkbox"]):focus,
+#form form input:not([type="radio"]):focus,
+textarea:focus {
+    border:none !important;
+    outline:2px dashed var(--shadow-color);
+    outline-offset:.33rem;
+}
 #form form input:not([type="checkbox"]):focus+label,
 #form form input:not([type="radio"]):focus+label,
 textarea:focus+label,
