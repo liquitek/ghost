@@ -755,7 +755,7 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          function handleUp(e){
                if (state&&drag) {
                   e.preventDefault();
-               e.stopPropagation();
+              /* e.stopPropagation();*/
                   setTimeout(()=>{downTarget.removeAttribute('data-noclick');downTarget=null;},100);
                   drag=false;
                } 

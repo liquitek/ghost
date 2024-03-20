@@ -118,7 +118,9 @@ footer .btn:hover {
 .nav-link:hover{
   color:#fff;
 }
+
 /* utils */
+
 .mb-7 {
     margin-bottom:4.375rem;
 }
@@ -128,6 +130,9 @@ footer .btn:hover {
 .mb-4\/5 {
     margin-bottom:2rem;
 }
+
+/****/
+
 #hero .navbar-nav {
   font-family: "IBM Plex Sans", serif;
   font-size:1.286rem;
@@ -205,6 +210,8 @@ textarea:not([data-value=""])+label{
     font-size: .7em;
     left:1.5rem;
 }
+
+/****/
 
 [tab-content]:not([active]) {
     opacity: 0;
