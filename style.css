@@ -157,7 +157,7 @@ footer .btn:hover {
     font-size: 1.25rem;
     color: inherit;
 }
-#form form #form form input:not([type="checkbox"])+label,
+#form form input:not([type="checkbox"])+label,
 #form form input:not([type="radio"])+label,
 textarea+label {
     position: absolute;
@@ -172,10 +172,10 @@ textarea+label {
     transform: translateY(33.33%);
 }
 
-#form form #form form input:not([type="checkbox"]):focus+label,
+#form form input:not([type="checkbox"]):focus+label,
 #form form input:not([type="radio"]):focus+label,
 textarea:focus+label,
-#form form #form form input:not([type="checkbox"]):not([data-value=""])+label,
+#form form input:not([type="checkbox"]):not([data-value=""])+label,
 #form form input:not([type="radio"]):not([data-value=""])+label,
 textarea:not([data-value=""])+label{
     top:-.25em;
@@ -327,33 +327,10 @@ details {
     content:'';
     position: absolute;
 }
-/*
-.fancy-bullets::before {
-    content:'';
-    display: block;
-    position: absolute;
-    top:0;
-    left: -.55em;
-    width:1em;
-    aspect-ratio: .5;
-    background: linear-gradient(to bottom, #181818 ,transparent);
-    
-}
-.fancy-bullets::after {
-    content:'';
-    display: block;
-    position: absolute;
-    bottom:0;
-    left: -.55em;
-    width:1em;
-    aspect-ratio: .5;
-    background: linear-gradient(to top, #181818 ,transparent);
-}
-*/
+
 .fancy-bullets li{
     position: relative;
     padding: 1rem;
-   /* border: 1px solid #000;*/
     border-radius: .66em;
     margin-block-end: 1em;
     box-shadow: 0 0 7.3px 0px var(--shadow-color);
@@ -633,24 +610,7 @@ input:focus::placeholder {
   padding: .5rem;
   border-radius: .5rem;
 }
-.top-line::before,.bottom-line::after {
-  /*! content: ''; */
-  display: block;
-  height: 1px;
-  z-index: 0;
-  position: absolute;
-  box-shadow: 0 0 .5rem 1px var(--shadow-color);
-  background: #6f4dff55;
-}
-.top-line::before {
-  inset: -1px 2px auto 2px;
-}
-.bottom-line::after {
-  inset: auto 2px -1px 2px;
-}
-[tabs] {
-    /*! max-height: 75vh; */
-}
+
 footer::before {
   content: '';
   display: block;
