@@ -161,11 +161,11 @@
              <div class="col-12">
                <form onsubmit="event.preventDefault()">
                   <div class="row mb-4/5">
-                     <div class="col-12 mb-4/5 mb-lg-0 col-lg-6 position-relative"><input id="preference" type="text" onchange="event.target.dataset.value = event.target.value" data-value=""><label for="preference">Удобный способ связи</label></div>
-                     <div class="col-12 col-lg-6 position-relative"><input onchange="event.target.dataset.value = event.target.value" type="text" id="income" data-value=""><label for="income">Средняя прибыль компании в год</label></div>
+                     <div class="col-12 mb-4/5 mb-lg-0 col-lg-6 position-relative"><input id="preference" type="text" onchange="update(event)" data-value="" ><label for="preference">Удобный способ связи</label></div>
+                     <div class="col-12 col-lg-6 position-relative"><input onchange="update(event)" type="text" id="income" data-value=""><label for="income">Средняя прибыль компании в год</label></div>
                   </div>
                   <div class="row mb-4/5">
-                     <div class="col position-relative"><textarea id="message" onchange="event.target.dataset.value = event.target.value" data-value="" style="height: 231px;"></textarea><label for="message">Опишите вашу проблему</label></div>
+                     <div class="col position-relative"><textarea id="message" onchange="update(event)" data-value="" style="height: 231px;"></textarea><label for="message">Опишите вашу проблему</label></div>
                   </div>
                   <button class="btn" type="submit" onclick="event.currentTarget.blur()">
                      Отправить 
@@ -174,6 +174,17 @@
                      </svg>
                   </button>
                </form>
+               <script>
+                  function update(e) {
+                     if (e.target.value) {
+                        e.target.dataset.value=e.target.value;
+                     }
+                     else {
+                        e.target.removeAttribute('data-value');
+                     }
+                  }
+                  document.querySelectorAll('#form form [data-value]').forEach(e=>{e.dataset.value=e.value});
+               </script>
              </div>
           </div>
        </div>
