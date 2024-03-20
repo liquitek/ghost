@@ -53,18 +53,22 @@ em {
     text-emphasis: none;
     color:var(--accent-color);
 }
+.info {
+  font-size: 1.125em;
+}
 h1,h2,h3 {
     color:#fff;
     font-weight: medium;
 }
 h1,.h1 {
-    font-size:3rem;
+    font-size:2.571rem;
 }
 h2,.h2 {
-    font-size: 2.5rem;
+    font-size: 1.714rem;
+    
 }
 h3,.h3 {
-    font-size: 2rem;
+    font-size:1.286;
 }
 h1 +div {
         font-weight:300;
@@ -140,9 +144,7 @@ footer .btn:hover {
 
 
 /* form */
-#form form {
-    font-size:1.25rem;
-}
+
 #form form input:not([type="checkbox"]),
 #form form input:not([type="radio"]),textarea {
     width:100%;
@@ -543,7 +545,7 @@ details {
   
 }
 #contacts {
-    font-size:1.5rem;
+    font-size:1.143rem;
 }
 #contacts em {
     color:#fff;
@@ -700,6 +702,9 @@ footer::before {
     :root {
         font-size:1rem;
     }
+    #form form {
+        font-size:1.25rem;
+    }
     details {
       padding:1.125rem 5rem;
       padding-right: 2rem
@@ -742,9 +747,27 @@ footer::before {
       flex:0 0 20%;
       display: flex;
     }
+    .chathead {
+        font-size:1.25rem;
+    }
+    
+
 }
 
 @media (min-width:992px) {
+    h1,.h1 {
+        font-size:3rem;
+    }
+    h2,.h2 {
+    font-size:2.5rem;
+    
+    }
+    h3,.h3 {
+    font-size: 2rem;
+}
+    .info {
+      font-size: 1em;
+    }
     #hero .navbar-nav {
         font-size: 1rem;
     }
@@ -805,7 +828,10 @@ footer::before {
     border-bottom-right-radius: 0;
     bottom: .5rem;
 }
-
+    #contacts {
+    font-size:1.5rem;
+}
+    
 }
 @media (min-width:1200px) {
     [tabs] {
