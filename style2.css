@@ -913,10 +913,10 @@ li.splide__slide {
     }
     .hero-image {
       position: absolute;
-      inset: 0 auto 0 75.5%;
+      inset: -76px auto 76px 75.5%;
       width: 100%;
       background: url(foto.png) center/auto no-repeat;
-      background-position: center 60%;
+      background-position: center;
       transform: translateX(-50%);
     }
     .hero-image-wrapper {
