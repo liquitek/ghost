@@ -18,56 +18,53 @@
       <script>
          function sliders() {
          let viewport;
-          var p = new Splide('.problem-slider').mount();
+          var p = new Splide('.problem-slider');
+          p.on("ready",()=>{
+            p.go('+1');
+            p.go('-1');
+          })
+          p.mount();
+          p.sync(p);
           var s = new Splide( '.quote-slider' ).mount();
+          s.sync(s);
           var b = new Splide('.fb-slider').mount();
+          b.sync(b);
           var t = new Splide('.team-slider');
+          
           t.on("ready",()=>{
             viewport=window.innerWidth;
+            t.go('+1');
           })
+
           onresize = () => {
             if ((viewport >= 768) && (window.innerWidth < 768)) {
                t.destroy({"completely":true});
                t.mount();
-               t.on("click",(e)=>{
-                  t.go(e.index)
-               });
+               t.sync(t);
+
             }
             if ((viewport < 768) && (window.innerWidth >= 768)) {
                t.destroy({"completely":true});
                t.mount();
-               t.on("click",(e)=>{
-                  t.go(e.index)
-               });
+               t.sync(t);
+   
             }
           }
-          t.on("click",(e)=>{
-           t.go(e.index)
-          });
-          s.on("click",(e)=>{
-           s.go(e.index)
-          });
-          p.on("click",(e)=>{
-           p.go(e.index)
-          });
-          b.on("click",(e)=>{
-           b.go(e.index)
-          });
-         t.on("ready",()=>{
-           setTimeout(()=>t.go(1),500);
-         })
          t.mount();
+         t.sync(t);
       }
        </script>
    </head>
    <body>
-      <section id="hero" class="overflow-x-hidden position-relative min-vh-100 d-flex flex-column">
+      <section id="hero" class="overflow-x-hidden min-vh-100 d-flex flex-column">
          <nav class="navbar navbar-expand-lg position-relative" style="z-index: 100;">
             <div class="container-xxl">
-              <a href="#" class="navbar-brand col-8 col-lg-4"><img class="d-sm-none" loading="lazy" src="logos.svg" alt="logo">
-               <img loading="lazy" class="d-none d-sm-block" src="logo-d.svg" alt="logo"></a><a onfocus="blur()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></a>
+              <a href="#" class="navbar-brand col-8 col-lg-4">
+               <img loading="lazy" class="img-fluid" src="logo-d.svg" alt="logo">
+            </a>
+               <a onfocus="blur()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></a>
       
-    </button>    
+         </a>    
 <div tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start flex-lg-row align-items-lg-center" style="max-width: 80vw;">
    <div class="offcanvas-header">
       <a href="#" class="navbar-brand"><img class="d-sm-none" src="logos.svg">
@@ -75,7 +72,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-   <div class="p-4 p-lg-0 offcanvas-body"><ul class="navbar-nav">
+   <div class="p-4 p-lg-0 offcanvas-body flex-fill"><ul class="navbar-nav w-100 justify-content-between">
                   <li class="nav-item">
                     <a href="#quotes-slider" class="nav-link">Отзывы</a>
                   </li>
@@ -88,17 +85,16 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#team">Команда</a>
                   </li>
-                </ul><a href="#form" class="btn px-0 mt-4 me-auto fs-5 d-lg-none">Оставить заявку</a></div><a href="#form" class="btn ms-auto d-none d-lg-inline-flex">Обсудить задачу</a></div></div>
+                </ul><a href="#form" class="btn px-0 mt-4 me-auto fs-5 d-lg-none">Оставить заявку</a></div><a href="#form" class="btn ms-auto d-none d-lg-inline-flex fs-6">Обсудить задачу</a></div></div>
               
           </nav>         
          
 <div style="flex: 1 1 auto;" class="container-xxl  d-flex">
-          <div class="row flex-column flex-md-row align-items-center flex-wrap">
-             <div class="col order-md-3 hero-image-wrapper"><div class="hero-image"></div></div><div class="col  position-relative col-md-7 col-lg-6" style="z-index: 1;">
-                <h1>Интеграция ИИ в бизнес-
-                   процессы вашей компании
+          <div class="row flex-column flex-md-row align-items-center flex-wrap position-relative">
+             <div class="col order-md-3 hero-image-wrapper"><div class="hero-image"></div></div><div class="col  position-relative col-md-7" style="z-index: 1;">
+                <h1>Интеграция ИИ в бизнес-процессы вашей компании
                 </h1>
-                <div style="max-width: 557px;" class="mb-6">Увеличим прибыль и сократим расходы с помощью внедрения ИИ-решений, автоматизирующих и оптимизирующих задачи ваших сотрудников</div>
+                <div style="max-width: 557px;" class="mb-6">Увеличим прибыль и сократим расходы с помощью внедрения ИИ-решений, автоматизирующих и оптимизирующих работу ваших сотрудников</div>
                 <a href="#form" class="btn">Обсудить задачу</a>
              </div>
           </div>
@@ -114,7 +110,7 @@
             </div>
          </div>
          <div class="container-xxl px-0">
-          <div data-splide='{"mediaQuery":"min","gap":"2rem","type":"loop","arrows":false,"padding":{"left":".5rem","right":"33%"},"breakpoints":{"768":{"perPage":2,"gap":"3.5rem","padding":{"left":".5rem","right":"calc(58vw - (var(--bs-container)*0.5))"}}}}' class="problem-slider splide">
+          <div data-splide='{"isNavigation": true,"mediaQuery":"min","gap":"2rem","type":"loop","arrows":false,"padding":{"left":".5rem","right":"33%"},"breakpoints":{"768":{"perPage":2,"gap":"3.5rem","padding":{"left":".5rem","right":"calc(58vw - (var(--bs-container)*0.5))"}}}}' class="problem-slider splide">
            <div class="splide__track">
               <ul class="splide__list">
                  <li class="splide__slide">
@@ -137,7 +133,28 @@
                  <li class="splide__slide">
                   <div class="slide">
                     <div class="heading">Человеческого фактора</div>
-                     <div class="text">Сотрудники работают менее эффективно, чем предполагает бизнес-модель (болеют, уходят в отпуска,совершают ошибки связанные с человеческим фактором), не справляются с большими нагрузками (общение с несколькими клиентами/учениками/сотрудниками одновременно). <em>Издержки на ФОТ (фонд оплаты труда) в разы выше, чем прибыль, которую приносит команда проекта.</em>
+                     <div class="text">Сотрудники работают менее эффективно, чем предполагает бизнес-модель (болеют, совершают ошибки и т.д.), не справляются с большими нагрузками (общение с несколькими клиентами/учениками одновременно). <em>Издержки на ФОТ (фонд оплаты труда) в разы выше, чем прибыль, которую приносит команда проекта.</em>
+                     </div>
+                  </div>
+                 </li>
+                 <li class="splide__slide">
+                  <div class="slide">
+                    <div class="heading">Высоких операционных затрат</div>
+                     <div class="text">Квалифицированные сотрудники, участвующие в сложных бизнес-процессах требуют большой оплаты труда, вследствие чего <em>падает общая маржинальность проекта.</em>
+                     </div>
+                  </div>
+                 </li>
+                 <li class="splide__slide">
+                  <div class="slide">
+                    <div class="heading">Огромного количества данных</div>
+                     <div class="text">Вы или ваши сотрудники не можете принять верное стратегическое решение, поскольку на прогнозирование результата влияет огромное количество бизнес-показателей. <em>Как следствие, теряете прибыль из-за ошибок в планировании.</em>
+                     </div>
+                  </div>
+                 </li>
+                 <li class="splide__slide">
+                  <div class="slide">
+                    <div class="heading">Трат на линейные задачи</div>
+                     <div class="text">В вашем бизнесе много простых процессов и их можно эффективно заменить роботизированным сотрудником, который, в отличие от человека не требует больших ресурсов на содержание.</em>
                      </div>
                   </div>
                  </li>
@@ -161,11 +178,11 @@
              <div class="col-12">
                <form onsubmit="event.preventDefault()">
                   <div class="row mb-4/5">
-                     <div class="col-12 mb-4/5 mb-lg-0 col-lg-6 position-relative"><input id="preference" type="text" onchange="update(event)" data-value="" ><label for="preference">Удобный способ связи</label></div>
-                     <div class="col-12 col-lg-6 position-relative"><input onchange="update(event)" type="text" id="income" data-value=""><label for="income">Средняя прибыль компании в год</label></div>
+                     <div class="col-12 mb-4/5 mb-lg-0 col-lg-6 position-relative"><input id="preference" type="text" onchange="update(event)" data-value="" ><label for="preference">Контакт для связи</label></div>
+                     <div class="col-12 col-lg-6 position-relative"><input onchange="update(event)" type="text" id="income" data-value=""><label for="income">Примерный оборот компании в год</label></div>
                   </div>
                   <div class="row mb-4/5">
-                     <div class="col position-relative"><textarea id="message" onchange="update(event)" data-value="" style="height: 231px;"></textarea><label for="message">Опишите вашу проблему</label></div>
+                     <div class="col position-relative"><textarea id="message" onchange="update(event)" data-value="" style="height: 231px;"></textarea><label for="message">Деятельность, сайт</label></div>
                   </div>
                   <button class="btn" type="submit" onclick="event.currentTarget.blur()">
                      Отправить 
@@ -175,14 +192,7 @@
                   </button>
                </form>
                <script>
-                  function update(e) {
-                     if (e.target.value) {
-                        e.target.dataset.value=e.target.value;
-                     }
-                     else {
-                        e.target.removeAttribute('data-value');
-                     }
-                  }
+                  function update(e){e.target.dataset.value=e.target.value};
                   document.querySelectorAll('#form form [data-value]').forEach(e=>{e.dataset.value=e.value});
                </script>
              </div>
@@ -198,129 +208,66 @@
                 </div>
              </div>
           </div>
-          <div data-splide='{"mediaQuery":"min","type":"loop","gap":"1rem","padding":{"left":"5%","right":"33%"},"arrows":false,"breakpoints":{"768":{"perPage":2,"gap":"2rem","padding":{"left":"max(calc(50vw - (var(--bs-container)*0.5)),5%)","right":"max(calc(50vw - (var(--bs-container)*0.5)),5%)"}}}}' class="quote-slider splide">
+          <div data-splide='{"cloneStatus":false,"updateOnMove":true,"isNavigation": true,"mediaQuery":"min","type":"loop","gap":"1rem","padding":{"left":"5%","right":"33%"},"arrows":false,"breakpoints":{"768":{"perPage":2,"gap":"2rem","padding":{"left":"max(calc(50vw - (var(--bs-container)*0.5)),5%)","right":"max(calc(50vw - (var(--bs-container)*0.5)),5%)"}}}}' class="quote-slider splide">
             <div class="splide__track">
                <ul class="splide__list">
                   <li class="splide__slide">
                     <div class="slide-bg-layer"></div>
                      <div class="slide">
                         <div class="d-flex align-items-center">
-                           <div style="flex: 0 0 71px;"><img loading="lazy" src="https://placehold.co/100x100" class="d-block img-fluid rounded-circle"></div>
+                           <div style="flex: 0 0 71px;"><img loading="lazy" src="q1.jpg" class="d-block img-fluid rounded-circle"></div>
                            <div style="flex: 1 1 auto;" class="ms-3">
-                              <div class="name">Ислам Саадулиев</div>
-                              <div class="title">Директор по развитию, <a href="https://nexuspro.kz" class="site" target="_blank">nexuspro.kz</a></div>
-                              <div class="date">17 февраля 2024</div>
+                              <div class="name">Виолетта Василенко</div>
+                              <div class="title">Тьютор, <a href="https://t.me/tutor_viola" class="site" target="_blank">t.me/tutor_viola</a></div>
+                              <div class="date"></div>
                            </div>
                         </div>
-                        <div class="position
-                           ">Автоматизация первичных продаж/консультирования 
-                           и поддержки
-                        </div>
-                        <div class="quote">Я много изучал и работал с ИИ, но то что делает эта команда, каких результатов добиваются – не укладывается у меня в голове, это невероятная эффективность, изначально я не думал что и правда полностью удастся убрать некоторых сотрудников с должностей, 
-                           но это получилось, а качество работы не то что ухудшилось, а даже выросло!&nbsp;Буду возвращаться сюда снова и снова!
+                        <div class="heading"></div>
+                        <div class="quote">Внедрение нейросотрудника в образовательный процесс стало для нас очень крутым прорывом!
+
+                           Если раньше мы тратили по 25-30 минут на один комментарий-отчёт к занятию, то сейчас за это время можно написать 5 полноценных комментариев! Вдумайтесь только: это в 5 (!) раз больше!
+                           В педагогике нельзя писать просто по шаблону, ведь каждый тьюторант индивидуален! Теперь обратная связь по каждому из них стала более полноценной и корректной.
+                           Время, затрачиваемое тьютором на анализ тьюториала, уменьшилось в несколько раз. Этот опыт действительно превзошёл наши ожидания и улучшил качество отчётов к занятиям.
+
+                           Спасибо GOST AI Solutions!
                         </div>
                      </div>
                   </li>
                   <li class="splide__slide">
-                    <div class="slide-bg-layer"></div>
-                     <div class="slide">
-                        <div class="d-flex align-items-center">
-                           <div style="flex: 0 0 71px;"><img loading="lazy" src="https://placehold.co/100x100" class="d-block img-fluid rounded-circle"></div>
-                           <div style="flex: 1 1 auto;" class="ms-3">
-                              <div class="name">Ислам Саадулиев</div>
-                              <div class="title">Директор по развитию, <a href="https://nexuspro.kz" class="site" target="_blank">nexuspro.kz</a></div>
-                              <div class="date">17 февраля 2024</div>
-                           </div>
-                        </div>
-                        <div class="position
-                           ">Автоматизация первичных продаж/консультирования 
-                           и поддержки
-                        </div>
-                        <div class="quote">Я много изучал и работал с ИИ, но то что делает эта команда, каких результатов добиваются – не укладывается у меня в голове, это невероятная эффективность, изначально я не думал что и правда полностью удастся убрать некоторых сотрудников с должностей, 
-                           но это получилось, а качество работы не то что ухудшилось, а даже выросло!&nbsp;Буду возвращаться сюда снова и снова!
-                        </div>
-                     </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="slide-bg-layer"></div>
-                     <div class="slide">
-                        <div class="d-flex align-items-center">
-                           <div style="flex: 0 0 71px;"><img loading="lazy" src="https://placehold.co/100x100" class="d-block img-fluid rounded-circle"></div>
-                           <div style="flex: 1 1 auto;" class="ms-3">
-                              <div class="name">Ислам Саадулиев</div>
-                              <div class="title">Директор по развитию, <a href="https://nexuspro.kz" class="site" target="_blank">nexuspro.kz</a></div>
-                              <div class="date">17 февраля 2024</div>
-                           </div>
-                        </div>
-                        <div class="position
-                           ">Автоматизация первичных продаж/консультирования 
-                           и поддержки
-                        </div>
-                        <div class="quote">Я много изучал и работал с ИИ, но то что делает эта команда, каких результатов добиваются – не укладывается у меня в голове, это невероятная эффективность, изначально я не думал что и правда полностью удастся убрать некоторых сотрудников с должностей, 
-                           но это получилось, а качество работы не то что ухудшилось, а даже выросло!&nbsp;Буду возвращаться сюда снова и снова!
-                        </div>
-                     </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="slide-bg-layer"></div>
-                     <div class="slide">
-                        <div class="d-flex align-items-center">
-                           <div style="flex: 0 0 71px;"><img loading="lazy" src="https://placehold.co/100x100" class="d-block img-fluid rounded-circle"></div>
-                           <div style="flex: 1 1 auto;" class="ms-3">
-                              <div class="name">Ислам Саадулиев</div>
-                              <div class="title">Директор по развитию, <a href="https://nexuspro.kz" class="site" target="_blank">nexuspro.kz</a></div>
-                              <div class="date">17 февраля 2024</div>
-                           </div>
-                        </div>
-                        <div class="position
-                           ">Автоматизация первичных продаж/консультирования 
-                           и поддержки
-                        </div>
-                        <div class="quote">Я много изучал и работал с ИИ, но то что делает эта команда, каких результатов добиваются – не укладывается у меня в голове, это невероятная эффективность, изначально я не думал что и правда полностью удастся убрать некоторых сотрудников с должностей, 
-                           но это получилось, а качество работы не то что ухудшилось, а даже выросло!&nbsp;Буду возвращаться сюда снова и снова!
-                        </div>
-                     </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="slide-bg-layer"></div>
-                     <div class="slide">
-                        <div class="d-flex align-items-center">
-                           <div style="flex: 0 0 71px;"><img loading="lazy" src="https://placehold.co/100x100" class="d-block img-fluid rounded-circle"></div>
-                           <div style="flex: 1 1 auto;" class="ms-3">
-                              <div class="name">Ислам Саадулиев</div>
-                              <div class="title">Директор по развитию, <a href="https://nexuspro.kz" class="site" target="_blank">nexuspro.kz</a></div>
-                              <div class="date">17 февраля 2024</div>
-                           </div>
-                        </div>
-                        <div class="position
-                           ">Автоматизация первичных продаж/консультирования 
-                           и поддержки
-                        </div>
-                        <div class="quote">Я много изучал и работал с ИИ, но то что делает эта команда, каких результатов добиваются – не укладывается у меня в голове, это невероятная эффективность, изначально я не думал что и правда полностью удастся убрать некоторых сотрудников с должностей, 
-                           но это получилось, а качество работы не то что ухудшилось, а даже выросло!&nbsp;Буду возвращаться сюда снова и снова!
-                        </div>
-                     </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="slide-bg-layer"></div>
-                     <div class="slide">
-                        <div class="d-flex align-items-center">
-                           <div style="flex: 0 0 71px;"><img loading="lazy" src="https://placehold.co/100x100" class="d-block img-fluid rounded-circle"></div>
-                           <div style="flex: 1 1 auto;" class="ms-3">
-                              <div class="name">Ислам Саадулиев</div>
-                              <div class="title">Директор по развитию, <a href="https://nexuspro.kz" class="site" target="_blank">nexuspro.kz</a></div>
-                              <div class="date">17 февраля 2024</div>
-                           </div>
-                        </div>
-                        <div class="position
-                           ">Автоматизация первичных продаж/консультирования 
-                           и поддержки
-                        </div>
-                        <div class="quote">Я много изучал и работал с ИИ, но то что делает эта команда, каких результатов добиваются – не укладывается у меня в голове, это невероятная эффективность, изначально я не думал что и правда полностью удастся убрать некоторых сотрудников с должностей, 
-                           но это получилось, а качество работы не то что ухудшилось, а даже выросло!&nbsp;Буду возвращаться сюда снова и снова!
-                        </div>
-                     </div>
-                  </li>
+                     <div class="slide-bg-layer"></div>
+                      <div class="slide">
+                         <div class="d-flex align-items-center">
+                            <div style="flex: 0 0 71px;"><img loading="lazy" src="q2.jpg" class="d-block img-fluid rounded-circle"></div>
+                            <div style="flex: 1 1 auto;" class="ms-3">
+                               <div class="name">Наталья Мизудо</div>
+                               <div class="title">Нумеролог</div>
+                               <div class="date"></div>
+                            </div>
+                         </div>
+                         <div class="heading"></div>
+                         <div class="quote">Большое спасибо AI Solutions за интеграцию нейросотрудника-нумеролога в мою нумерологическую практику! Это решение сделало мою работу в разы эффективнее. Теперь я предоставляю своим клиентам более глубокие разборы за очень короткий срок и могу выделить больше внимания каждому клиенту и лично себе. Мои клиенты уже отметили значительное улучшение качества услуг! Ещё раз спасибо за возможность использовать такую инновационную технологию в своей работе!
+                         </div>
+                      </div>
+                   </li>
+                   <li class="splide__slide">
+                     <div class="slide-bg-layer"></div>
+                      <div class="slide">
+                         <div class="d-flex align-items-center">
+                            <div style="flex: 0 0 71px;"><img loading="lazy" src="q3.jpg" class="d-block img-fluid rounded-circle"></div>
+                            <div style="flex: 1 1 auto;" class="ms-3">
+                               <div class="name"><a href="https://typhoon.coffee/" target="_blank">Typhoon Roasters</a></div>
+                               <div class="title"></div>
+                               <div class="date"></div>
+                            </div>
+                         </div>
+                         <div class="heading"></div>
+                         <div class="quote">Команда GOST AI Solutions сделала невероятно много для нашей компании. Внедрение их инновационных решений на базе искусственного интеллекта стало ключевым шагом в решении наших проблем. В частности, внедрение нейросотрудника привело к значительному улучшению наших процессов обучения новых сотрудников и управления данными.
+                           Мы глубоко признательны за профессионализм и энтузиазм, с которыми команда GOST AI Solutions подошла к работе. Сотрудничество с ними было не только приятным, но и крайне продуктивным.
+                          
+                          Благодарим за ваше ценное участие в развитии Typhoon Roasters.                          
+                         </div>
+                      </div>
+                   </li>
                </ul>
             </div>
          </div>
@@ -334,25 +281,24 @@
             </div>
             <div class="col-12">
                <div tabs="" class="d-flex flex-lg-row flex-column-reverse">
-                  <div tab-buttons="" style="flex: 0 0 25%;overflow-y: auto;scrollbar-width: thin;direction: rtl;scrollbar-color: #664DFF #fff3;scroll-behavior: smooth;" class="d-flex pt-5 pb-3 py-lg-0 flex-column position-relative">
-                     <div style="direction: ltr;" class="d-flex flex-lg-column gap-3 p-2 ps-4 pe-0"><a draggable="false" href="#" data-id="1" tab-button="" active=""><img loading="lazy" src="3.png" width="71" class="rounded-circle align-top me-3">Typhoon Roaster</a><a  draggable="false" href="#" data-id="2" tab-button=""><img loading="lazy" src="2.png" width="71" class="rounded-circle align-top me-3">РЖД</a><a  draggable="false" href="#" data-id="3" tab-button=""><img loading="lazy" src="1.png" width="71" class="rounded-circle align-top me-3">Тинькофф</a><a  draggable="false" href="#" data-id="4" tab-button=""><img loading="lazy" src="4.png" width="71" class="rounded-circle align-top me-3">GOST.Pay</a><a draggable="false" href="#" data-id="5" tab-button=""><img loading="lazy" src="5.png" width="71" class="rounded-circle align-top me-3">ТочкаИмпро</a><a draggable="false"  href="#" data-id="6" tab-button=""><img loading="lazy" src="https://placehold.co/140x140" width="71" class="rounded-circle align-top me-3">Lorem Ipsum</a></div>
+                  <div tab-buttons="" style="flex: 0 0 25%;overflow-y: auto;direction: rtl;scroll-behavior: smooth;" class="d-flex pt-5 pb-3 py-lg-0 flex-column position-relative">
+                     <div style="direction: ltr;" class="d-flex flex-lg-column gap-3 p-2 ps-4 pe-0"><a draggable="false" href="#" data-id="1" tab-button="" active=""><img loading="lazy" src="c1.jpg" width="71" class="rounded-circle me-3 "><span style="overflow:hidden;text-overflow:ellipsis">Нейросотрудник-тьютор</span></a><a  draggable="false" href="#" data-id="2" tab-button=""><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Russian_Railways_Logo.svg" width="71" class="rounded-circle me-3 "><span style="overflow:hidden;text-overflow:ellipsis">РЖД</span></a><a  draggable="false" href="#" data-id="3" tab-button=""><img loading="lazy" src="3.png" width="71" class="rounded-circle  me-3"><span style="overflow:hidden;text-overflow:ellipsis">Typhoon Roasters</span></a></div>
                   </div>
                   <div tabs-panel="" class="d-flex flex-column chat">
                      <div class="p-4 position-relative bottom-line chathead">Мы открыто описываем все наши кейсы. Вы можете спросить у нейро-ассистента 
                         всё, что хотите узнать о данном проекте.
                      </div>
-                     <div id="chats" style="flex: 1 0 auto;position:relative;overflow-y: auto;scrollbar-color: #664DFF #fff3;scroll-behavior: smooth;scrollbar-width: thin;z-index: 1;background: #181818;border-radius: 1rem;
-                     border: 1px dashed var(--shadow-color-alpha);" class="px-3 py-3 mx-2 ">
+                     <div class="d-flex flex-fill mx-2 ps-0 p-2 py-3" style="border-radius: 1rem;overflow: hidden;border: 1px dashed var(--shadow-color-alpha);background: var(--bs-body-bg);">
+                        <div id="chats" style="flex: 1 0 auto;position:relative;overflow-y: auto;scroll-behavior: smooth;z-index: 1;" class="ps-3 pe-2">
                         <div tab-content="" data-id="1" active="">
                            <div class="chat-message"><div class="message-content recieved">Попробуйте "задать вопрос" в строке внизу</div></div><div class="chat-message"><div class="message-content sent">Пример сообщения</div></div>
                         </div>
                         <div tab-content="" data-id="2" hidden=""></div>
                         <div tab-content="" data-id="3" hidden=""></div>
-                        <div tab-content="" data-id="4" hidden=""></div>
-                        <div tab-content="" data-id="5" hidden=""></div>
-                        <div tab-content="" data-id="6" hidden=""></div>
                      </div>
-                     <div class="p-4 d-flex position-relative top-line chathead"><input type="text" placeholder="Задай любой вопрос по проекту! (loremizer)" chat-input=""><button data-source="[chat-input]" data-target="[chat][active]" chat-button="" class="ms-auto btn"><svg style="display:block" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none">
+                     </div>
+                     
+                     <div class="p-4 gap-3 d-flex position-relative top-line chathead"><input type="text" placeholder="Задай любой вопрос по проекту!" chat-input=""><button data-source="[chat-input]" data-target="[chat][active]" chat-button="" class="ms-auto btn"><svg style="display:block" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none">
                         <path d="M13.1943 5.87027L6.98175 2.77712C3.54168 1.06426 1.82165 0.207829 1.0327 1.08494C0.245346 1.96205 1.09339 3.79381 2.79106 7.45733C3.14242 8.21554 3.31809 8.59292 3.31809 8.9996C3.31809 9.40627 3.14242 9.78538 2.79106 10.5419C1.09339 14.2054 0.245345 16.0389 1.03429 16.9143C1.82165 17.7931 3.54168 16.9349 6.98335 15.2221L13.1943 12.1289C15.9061 10.7779 17.2636 10.1024 17.2636 8.9996C17.2636 7.89675 15.9077 7.22125 13.1943 5.87027Z" fill="currentColor"></path>
                      </svg></button></div>
                   </div>
@@ -366,17 +312,14 @@
     <div class="spacer"></div>
     <div class="container-xxl">
        <div style="align-content: start;" class="row justify-content-center">
-          <div class="col col-lg-6 text-center">
+          <div class="col text-center">
              <h2 class="mb-5 pb-3">Быстрые <em>ответы</em> на <em>частые</em> вопросы</h2>
              
           </div>
           <div class="col-12 col-xl-11 m-auto">
              
-          <details  open=""><summary>Сможете ли вы встроить ИИ в нашу сложную операционную деятельность?</summary><div>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div></details><details><summary>Сможет ли ИИ адекватно воспринимать всю обратную связь от клиентов?
-В том числе сложные запросы?</summary>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</details><details><summary>Точно ли ваше решение уменьшит мои издержки и я не солю деньги
-«в никуда» в очередной раз?</summary>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</details><details><summary>Сможет ли ИИ полностью взаимодействовать с клиентом или ему
-нужна будет поддержка сотрудника?</summary>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</details><details><summary>Безопасно ли внедрение ИИ? Не «сломает» ли он мне весь бизнес?
-Смогу ли я его контролировать?</summary>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</details><details><summary>Гарантируете ли вы безопасность моих данных?</summary>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</details></div>
+          <details  open=""><summary>Сможете ли вы встроить ИИ в нашу сложную операционную деятельность?</summary>Да, конечно сможем. Более того, мы её упростим. Прежде чем встраивать ИИ в вашу деятельность мы проведём подробный аудит и предложим решения по оптимизации ваших бизнес-процессов, только после этого будем приступать к интеграции ИИ.</details><details><summary>Сможет ли ИИ адекватно воспринимать всю обратную связь от клиентов? В том числе сложные запросы?</summary>Да, конечно сможет. ИИ воспринимает информацию на уровне человека со степенью магистра, более того, интеграция ИИ в ваш бизнес подразумевает, что он также будет учитывать всю внутреннюю информацию вашей компании: скрипты, регламенты, тон общения с клиентом и так далее.</details><details><summary>Точно ли ваше решение уменьшит мои издержки и я не солю деньги «в никуда» в очередной раз?</summary>Прежде чем начинать работу, мы детально просчитаем экономику конкретно для вашей компании. Наше решение точно будет эффективным, а численные показатели мы сможем озвучить после оценки проекта.</details><details><summary>Сможет ли ИИ полностью взаимодействовать с клиентом или ему нужна будет поддержка сотрудника?</summary>Это зависит от задач, которые будет решать ИИ в вашем бизнесе, и его функционала. Например, во внутреннем обучении сотрудников и их консультировании по базе знаний компании ИИ не нуждается в помощи, а в работе с отзывами будет нуждаться в контроле человека (но при этом увеличит производительность сотрудника за ту же единицу времени в 4 раза).</details><details><summary>
+            Безопасно ли внедрение ИИ? Не «сломает» ли он мне весь бизнес? Смогу ли я его контролировать?</summary>Да, внедрение ИИ совершенно безопасно, так как происходит поэтапно и в конкретно выбранном бизнес-процессе. Также важно отметить, что прежде, чем начать работу «в полях», интеграция проходит несколько этапов тестирований, во время которых все ошибки устраняются и вносятся корректировки для более качественной работы.</details><details><summary>Гарантируете ли вы безопасность моих данных?</summary>Да, гарантируем абсолютную безопасность ваших данных, так как мы используем проверенные серверы по вашим требованиям, на которых установлены локальные модели.</details></div>
        </div>
     </div>
  </section>
@@ -492,12 +435,12 @@
  будет для вас <em>простым</em>!</h2>
         </div>
         <div class="col-12">
-    <div data-splide='{"arrows":false,"padding":"1rem","autoHeight":true,"height":"75vh","mediaQuery":"min","type":"loop","direction":"ttb","breakpoints": {"576": {
+    <div data-splide='{"isNavigation": true,"arrows":false,"padding":"1rem","autoHeight":true,"height":"75vh","mediaQuery":"min","type":"slide","direction":"ttb","omitEnd":true,"breakpoints": {"576": {
 			"destroy": true}}}' class="splide fb-slider">
       <div class="splide__track">
          <ul class="fancy-bullets splide__list"><li class="splide__slide">Оставьте заявку на сайте, мы свяжемся с вами в течении рабочего дня и предложим удобный способ коммуникации (встреча, online-звонок и т.д.)</li><li class="splide__slide">На встрече с менеджером вы подробнее узнаете про наши услуги интеграции и получите ответы на вопросы. Также 
             наш менеджер проведёт короткую диагностику вашего бизнеса, в результате которой мы поймем, сможем ли быть 
-            полезны для вас</li><li class="splide__slide">При положительном результате, будет второй, подробный созвон с нашим бизнес-аналитиком, который уже детально разберет все процессы, и составит план работ, ресурсных затрат, ЦКП, и смету для утверждения</li><li class="splide__slide">После утверждения сметы, мы переходим к составлению договора, так же его согласовываем и подписываем</li><li class="splide__slide">Далее идет оплата и мы начинаем работу, запрашиваем всю необходимую информацию и доступы</li><li class="splide__slide">Закончив интеграцию мы демонстрируем вам финальный продукт, обучаем работе с ним и обеспечиваем полную поддержку и доработки до момента полной автономной работы</li><li class="splide__slide">Дружим еще долгие годы, внедряя ИИ в новые процессы, потому что их потенциал безграничен :)</li></ul>
+            полезны для вас</li><li class="splide__slide">При положительном результате, будет второй, подробный созвон с нашим бизнес-аналитиком, который уже детально разберет все процессы, и составит план работ, ресурсных затрат, ЦКП, и смету для утверждения</li><li class="splide__slide">После утверждения сметы, мы переходим к составлению договора, также его согласовываем и подписываем</li><li class="splide__slide">Далее идет оплата и мы начинаем работу, запрашиваем всю необходимую информацию и доступы</li><li class="splide__slide">Закончив интеграцию мы демонстрируем вам финальный продукт, обучаем работе с ним и обеспечиваем полную поддержку и доработки до момента полной автономной работы</li><li class="splide__slide">Дружим еще долгие годы, внедряя ИИ в новые процессы, потому что их потенциал безграничен :)</li></ul>
       </div>
     </div>
         
@@ -514,39 +457,64 @@
               <h2 class="mb-5">Мы собрали команду <em>экспертов</em>, которую хотим с гордостью представить</h2>
            </div>
         </div>
-          <div data-splide='{"autoWidth":false,"heightRatio":"1.5","mediaQuery":"min","type":"loop","gap":"1rem","arrows":false,"padding":{"left":0,"right":"33.33%"},"breakpoints":{"768":{"autoWidth":true,"focus":"center","padding":{"left":"25%","right":"calc(min(var(--bs-container),100vw)*0.33 + 50vw - min(var(--bs-container),100vw)*0.5)"},"height":"auto","cloneStatus":false}}}' class="team-slider splide">
+          <div data-splide='{"updateOnMove":true,"isNavigation": true,"autoWidth":false,"heightRatio":"1.5","mediaQuery":"min","type":"loop","gap":"1rem","arrows":false,"padding":{"left":0,"right":"33.33%"},"breakpoints":{"768":{"autoWidth":true,"focus":"center","padding":{"left":"25%","right":"calc(min(var(--bs-container),100vw)*0.33 + 50vw - min(var(--bs-container),100vw)*0.5)"},"height":"auto","cloneStatus":false}}}' class="team-slider splide">
             <div class="splide__track">
                <ul class="splide__list">
                   <li class="splide__slide">
                      <div class="team-slide">
                       <div class="slide-bg-layer"></div>
                         <img loading="lazy" src="exp1_1.png">
-                        <div class="slide-layer"><div class="name">Севак Петросян</div><div class="title">Технический директор</div></div>
+                        <div class="slide-layer">
+                           <div class="name">Севак Петросян</div>
+                           <div class="title">Технический директор</div>
+                           <div class="about">
+                              <span>10 лет в IT, инженер, аналитик</span>
+                              <div class="mt-2">Работал с PSPCatalog, YogaDog, Traffic Devils<div>
+                           </div>
+                        </div>        
                      </div>
                   </li>
                   <li class="splide__slide">
-                   <div class="team-slide">
-                    <div class="slide-bg-layer"></div>
-                     <img loading="lazy" src="exp2_1.png">
-                     <div class="slide-layer"><div class="name">Сайковский Иван</div>
-                     <div class="title">Генеральный директор</div>
-                     <div class="about"><span>7 лет в маркетинге<br>Предприниматель, маркетолог</span><div class="mt-2">РЖД, Тинькофф, ArtMasters, 
-                      ATLAS agency, Точка ИМПРО<div></div>
-                   </div>
+                     <div class="team-slide">
+                     <div class="slide-bg-layer"></div>
+                        <img loading="lazy" src="exp2_1.png">
+                        <div class="slide-layer">
+                           <div class="name">Сайковский Иван</div>
+                           <div class="title">Генеральный директор</div>
+                           <div class="about">
+                              <span>7 лет в маркетинге, Предприниматель, маркетолог</span>
+                              <div class="mt-2">Работал с РЖД, Тинькофф, ArtMasters, ATLAS Agency, Точка ИМПРО<div>
+                           </div>
+                        </div>
+                     </div>
                 </li>
                 <li class="splide__slide">
-                 <div class="team-slide">
-                  <div class="slide-bg-layer"></div>
-                   <img loading="lazy" src="exp3_1.png">
-                   <div class="slide-layer"><div class="name">Анна Кан</div><div class="title">Директор по продажам</div></div>
+                  <div class="team-slide">
+                     <div class="slide-bg-layer"></div>
+                     <img loading="lazy" src="exp3_1.png">
+                     <div class="slide-layer">
+                        <div class="name">Анна Кан</div>
+                        <div class="title">Директор по продажам</div>
+                        <div class="about">
+                           <span>10 лет в продажах, бизнес-технолог, кризис-менеджер</span>
+                           <div class="mt-2">Работала с Club500, Макбургерс, Универсиада-2019, GlushkoGroup</div>
+                        </div>
+                           
+                     </div>
                  </div>
               </li>
               <li class="splide__slide">
                <div class="team-slide">
-                <div class="slide-bg-layer"></div>
-                 <img loading="lazy" src="exp4_1.png">
-                 <div class="slide-layer"><div class="name">Даниил Вихров</div><div class="title">PR и связи 
-                  с общественностью</div></div>
+                  <div class="slide-bg-layer"></div>
+                  <img loading="lazy" src="exp4_1.png">
+                  <div class="slide-layer">
+                     <div class="name">Даниил Вихров</div>
+                     <div class="title">PR и связи с общественностью</div>
+                     <div class="about">
+                        <span>Project manager, PR-директор</span>
+                        <div class="mt-2">Работал с РЖД, ArtMasters, World of Dogs</div>
+                     </div>
+                  </div>
                </div>
             </li>
             
@@ -566,11 +534,11 @@
          <div class="vstack">
              <div class="pb-3 mb-4 mt-5 info"><em>ИНФОРМАЦИЯ</em></div>
              <div class="hstack mb-4/5 flex-wrap gap-4">
-               <div class="col">
+               <div class="col-auto">
                  <div class="pb-1 mb-3"><em>ИНН</em></div>
                  <div>246525853385</div>
                </div>
-               <div class="col">
+               <div class="col-auto">
                  <div class="pb-1 mb-3"><em>ОГРНИП<em></em></em></div>
                  <div>320246800036639</div>
                </div>
@@ -604,7 +572,7 @@
       
    <nav class="navbar"><a href="#" class="navbar-brand me-4">
          <img loading="lazy" src="logos.svg" alt="logo">
-      </a><div class="hstack flex-fill gap-3 me-auto"><div class="hstack gap-2 gap-sm-3 gap-lg-5 ms-md-auto me-auto"><a href="#quotes-slider" class="nav-link">Отзывы</a><a href="#cases" class="nav-link">Кейсы</a><a href="#faq" class="nav-link ">FAQ</a><a href="#team" class="nav-link">Команда</a></div><a href="#form" class="btn  flex-shrink-0 me-md-auto">Оставить заявку</a></div></nav></div>
+      </a><div class="hstack flex-fill gap-3 me-auto flex-wrap"><div class="hstack gap-2 gap-sm-3 gap-lg-5 ms-md-auto me-auto"><a href="#quotes-slider" class="nav-link">Отзывы</a><a href="#cases" class="nav-link">Кейсы</a><a href="#faq" class="nav-link ">FAQ</a><a href="#team" class="nav-link">Команда</a></div><a href="#form" class="btn  fs-6 flex-shrink-0 me-md-auto">Оставить заявку</a></div></nav></div>
    
  </footer>
 <script async src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" onload="sliders()"></script>
@@ -724,21 +692,20 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          var state=false;
          var downTarget;
          function handleResize(){
-
-            if ((window.innerWidth<breakpoint)&&!state){
-               if(!state) {
+            console.log("Hi! "+document.querySelector("html").offsetWidth);
+            var w = document.querySelector("html").offsetWidth;
+            if ((w<breakpoint)&&!state){
                   state=!state;
                   t=0;
                   xPrev=undefined;
                   drag=false;
-               }
-            } else {
-               if (window.innerWidth>=breakpoint) {
+            }
+
+            if (w>=breakpoint) {
                state=false;
                el.firstElementChild.style.transform="";
                }
             }
-         };
          handleResize();
          function hadleMove(e){
             if (state&&drag) {
@@ -775,9 +742,9 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          el.addEventListener("pointermove",hadleMove);
          el.addEventListener("pointerdown",handleDown);
          el.addEventListener("pointerup",handleUp);
-         }
+      };
          
-         new Tracker(document.querySelector("[tab-buttons]"));
+      new Tracker(document.querySelector("[tab-buttons]"));
     </script>
  </body>
  
