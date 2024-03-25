@@ -460,8 +460,6 @@ details {
 .fb-slider.splide .splide__pagination__page {
     -webkit-transform: rotateZ(90deg) !important;
             transform: rotateZ(90deg) !important;
-    /*! padding: ; */
-    margin: =;
     margin: 1rem;
 }
 .fb-slider.splide .splide__pagination {
