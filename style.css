@@ -316,6 +316,10 @@ summary {
 summary::marker {
   content: none;
 }
+summary::-webkit-details-marker {
+ display: none;
+}
+/*
 summary::before,summary::after {
   content:'';
   display: block;
@@ -332,23 +336,32 @@ summary::before,summary::after {
   border: .3em solid transparent;
   box-sizing: content-box;
 }
-summary::after {
-  transform: rotateZ(90deg);
+*/
+summary div[icon] {
+    position: absolute;
+    width:3.5em;
+    aspect-ratio: 1;
+    left:-4em;
+    top:-1em;
+    transform: translate(2%,-2%);
+    transition: .3s ease-in-out rotate;
+}
+summary div[icon] * {
+    width:100%;
+    height:100%; 
+    transform-origin: center;
+    display: block;
+}
+details[open] summary div[icon] {
+    rotate: 45deg;
 }
 details[open] summary {
     margin-bottom:1rem;
 }
-details[open] summary::before,details[open] summary::after {
+details[open] summary [icon] {
     color:var(--accent-color);
 }
-details[open] summary::before{
-    top:.7em;
-    transform: rotateZ(45deg)
-}
-details[open] summary::after {
-    top:.7em;
-    transform: rotateZ(135deg)
-}
+
 details {
   padding:1.125rem 3rem;
   border-bottom: 2px solid currentColor;
