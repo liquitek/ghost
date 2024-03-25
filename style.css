@@ -344,7 +344,7 @@ summary div[icon] {
     left:-4em;
     top:-1em;
     transform: translate(2%,-2%);
-    transition: .3s ease-in-out rotate;
+    transition: .3s ease-in-out rotate,.3s ease-in-out color;
 }
 summary div[icon] * {
     width:100%;
