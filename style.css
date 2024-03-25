@@ -572,14 +572,18 @@ details {
 }
 .team-slider.splide .splide__pagination,
 .problem-slider.splide .splide__pagination {
-    display: inline-block !important;
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
     transform: translateX(-50%);
-    left: calc(min(calc(100vw - 9%),var(--bs-container))*0.5);
+    left: calc(min(95vw,var(--bs-container))*0.5);
     margin: 0;
+    flex-wrap: nowrap;
 }
+.team-slider.splide .splide__pagination {
+    left:calc(min(calc(95vw - var(--bs-gutter-x)*.5),var(--bs-container))*0.5);
+}
+
 .team-slide .slide-layer {
     background: linear-gradient(to bottom,#644BFA17, #010314ff);
     position: absolute;
