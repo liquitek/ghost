@@ -581,7 +581,7 @@ details {
     flex-wrap: nowrap;
 }
 .team-slider.splide .splide__pagination {
-    left:calc(min(calc(95vw - var(--bs-gutter-x)*.5),var(--bs-container))*0.5);
+    left:calc(min(calc(95vw - var(--bs-gutter-x)),var(--bs-container))*0.5);
 }
 
 .team-slide .slide-layer {
