@@ -18,12 +18,7 @@
       <script>
          function sliders() {
          let viewport;
-          var p = new Splide('.problem-slider');
-          p.on("ready",()=>{
-            p.go('+1');
-            p.go('-1');
-          })
-          p.mount();
+          var p = new Splide('.problem-slider').mount();;          
           p.sync(p);
           var s = new Splide( '.quote-slider' ).mount();
           s.sync(s);
@@ -692,8 +687,9 @@ document.querySelector('[chat-input]').addEventListener('keydown',(e)=>{
          var state=false;
          var downTarget;
          function handleResize(){
-            console.log("Hi! "+document.querySelector("html").offsetWidth);
+            
             var w = document.querySelector("html").offsetWidth;
+            
             if ((w<breakpoint)&&!state){
                   state=!state;
                   t=0;
