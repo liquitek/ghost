@@ -480,6 +480,7 @@ details {
     padding: 1rem 3%;
     border-radius: min(2rem,2vw);
     overflow: hidden;
+    box-shadow: 0 0 3rem 0 #6f4dff33 inset;
 } 
 .quote-slider .splide__slide.is-active.is-visible .slide-bg-layer,
 .quote-slider .splide__slide.is-next.is-visible .slide-bg-layer{
