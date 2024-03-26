@@ -754,6 +754,18 @@ li.splide__slide {
     border-color:transparent !important;
     border: none !important;
 }
+.map {
+    border-radius: .33rem;
+  box-shadow: 0 0 .5rem 0 var(--shadow-color);
+  outline: 1px dashed var(--shadow-color-alpha);
+  outline-offset: .25rem;
+  aspect-ratio: 3/4;
+}
+.map iframe{
+  width:100%;
+  height:100%;
+}
+
 @media(min-width:576px) {
     .partner-logo {
       flex:0 0 25%;
@@ -779,6 +791,9 @@ li.splide__slide {
     .team-slide .name {
         color:#fff;
         font-size:2rem;
+    }
+    .map {
+        aspect-ratio: 16/9;
     }
 .team-slide .title {
         font-size:1.375rem;
@@ -856,7 +871,7 @@ li.splide__slide {
     .chathead {
         font-size:1.25rem;
     }
-    
+
 
 }
 
@@ -950,6 +965,9 @@ li.splide__slide {
         aspect-ratio: 2.5;
         min-height: 500px;
         max-width: 100%;
+    }
+    .map {
+        aspect-ratio: 3/2;
     }
 }
 @media (min-width:1200px) {
