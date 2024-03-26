@@ -770,12 +770,15 @@ li.splide__slide {
   outline: 1px dashed var(--shadow-color-alpha);
   outline-offset: .25rem;
   aspect-ratio: 3/4;
+  background: linear-gradient(to top, var(--shadow-color), white);
+  filter: invert(1) hue-rotate(170deg);
 }
 .map iframe{
   width:100%;
   height:100%;
+  mix-blend-mode: multiply;
 }
-.map:before{
+.map iframe::empty:before{
   position: absolute;
   top:50%;
   left:50%;
