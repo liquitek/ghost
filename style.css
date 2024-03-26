@@ -769,16 +769,16 @@ li.splide__slide {
   box-shadow: 0 0 .5rem 0 var(--shadow-color), 0 0 3rem 0 var(--shadow-color-alpha) inset;
   outline: 1px dashed var(--shadow-color-alpha);
   outline-offset: .25rem;
-  aspect-ratio: 3/4;
-  background: linear-gradient(to top, var(--shadow-color), white);
-  filter: invert(1) hue-rotate(170deg);
+  aspect-ratio: 3/4;  
+ /* background: linear-gradient(to top, var(--shadow-color), #fff);*/
+  /*filter: invert(1) hue-rotate(170deg);*/
 }
 .map iframe{
   width:100%;
   height:100%;
-  mix-blend-mode: multiply;
+ /* mix-blend-mode: multiply;*/
 }
-.map iframe::empty:before{
+.map:before{
   position: absolute;
   top:50%;
   left:50%;
