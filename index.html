@@ -694,7 +694,7 @@ function Chat(e) {
 this.sendRequest = () => {
   const chat_history = this.messages.map(m => m.message).join(' ');
   const encodedHistory = encodeURIComponent(chat_history);
-  const url = `http://109.71.240.121:4932/website_qa?id=${this.caseId}&chat_history=${encodedHistory}`;
+  const url = `https://api.youcloud.ru/website_qa?id=${this.caseId}&chat_history=${encodedHistory}`;
 
   fetchData(url, (data) => {
     const reply = data.choices[0].text;
