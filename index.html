@@ -601,12 +601,28 @@
    
  </footer>
 <script async src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" onload="sliders()"></script>
-    
     <script>
+  function fetchData(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          callback(JSON.parse(xhr.responseText));
+        } else {
+          console.error('Error:', xhr.status);
+        }
+      }
+    };
+    xhr.open('GET', url);
+    xhr.send();
+  }
+</script>
+    <script>
+	    
 	    document.querySelector('#form form').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const chat_id = "689839038";
+  const chat_id = "-4192801350";
   const token = "1376088971:AAF_VeBWXol9f2OEJ4he-Mk4Kus-7-xt7Qw";
   const text = `Новая заявка!%0A%0AКонтакт для связи: ${document.getElementById('preference').value}%0AПримерный оборот компании в год: ${document.getElementById('income').value}%0AДеятельность, сайт: ${document.getElementById('message').value}`;
 
@@ -675,19 +691,17 @@ function Chat(e) {
     }
   }
 
-  this.sendRequest = () => {
-    const chat_history = this.messages.map(m => m.message).join(' ');
-    const encodedHistory = encodeURIComponent(chat_history);
-    const url = `http://109.71.240.121:4932/website_qa?id=${this.caseId}&chat_history=${encodedHistory}`;
+this.sendRequest = () => {
+  const chat_history = this.messages.map(m => m.message).join(' ');
+  const encodedHistory = encodeURIComponent(chat_history);
+  const url = `http://109.71.240.121:4932/website_qa?id=${this.caseId}&chat_history=${encodedHistory}`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const reply = data.choices[0].text;
-        this.messages.push({"message": reply});
-        t.dispatchEvent(new Event("reply"));
-      });
-  }
+  fetchData(url, (data) => {
+    const reply = data.choices[0].text;
+    this.messages.push({"message": reply});
+    t.dispatchEvent(new Event("reply"));
+  });
+}
 
   t.chat = this;
   t.setAttribute("chat", '');
