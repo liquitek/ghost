@@ -277,7 +277,7 @@
             <div class="col-12">
                <div tabs="" class="d-flex flex-lg-row flex-column-reverse">
                   <div tab-buttons="" style="flex: 0 0 25%;overflow-y: auto;direction: rtl;scroll-behavior: smooth;" class="d-flex pt-5 pb-3 py-lg-0 flex-column position-relative">
-                     <div style="direction: ltr;" class="d-flex flex-lg-column gap-3 p-2 ps-4 pe-0"><a href="#" data-id="1" tab-button="" active=""><img loading="lazy" src="c1.jpg" width="71" class="rounded-circle me-3 "><span style="overflow:hidden;text-overflow:ellipsis">Нейросотрудник-тьютор</span></a><a href="#" data-id="2" tab-button=""><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Russian_Railways_Logo.svg" width="71" class="rounded-circle me-3 "><span style="overflow:hidden;text-overflow:ellipsis">РЖД</span></a><a href="#" data-id="3" tab-button=""><img loading="lazy" src="3.png" width="71" class="rounded-circle  me-3"><span style="overflow:hidden;text-overflow:ellipsis">Typhoon Roasters</span></a></div>
+                     <div style="direction: ltr;" class="d-flex flex-lg-column gap-3 p-2 ps-4 pe-0"><a href="#" data-id="1" data-case-id="3" tab-button="" active=""><img loading="lazy" src="c1.jpg" width="71" class="rounded-circle me-3 "><span style="overflow:hidden;text-overflow:ellipsis">Нейросотрудник-тьютор</span></a><a href="#" data-id="2" data-case-id="2" tab-button=""><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Russian_Railways_Logo.svg" width="71" class="rounded-circle me-3 "><span style="overflow:hidden;text-overflow:ellipsis">РЖД</span></a><a href="#" data-id="3" data-case-id="1" tab-button=""><img loading="lazy" src="3.png" width="71" class="rounded-circle  me-3"><span style="overflow:hidden;text-overflow:ellipsis">Typhoon Roasters</span></a></div>
                   </div>
                   <div tabs-panel="" class="d-flex flex-column chat">
                      <div class="p-4 position-relative bottom-line chathead">Мы открыто описываем все наши кейсы. Вы можете спросить у нейро-ассистента всё, что хотите узнать о любом из представленных проектов.
@@ -643,25 +643,65 @@
        })
     </script>
     <script>
-      function Chat(e){
-   const t = (typeof e === "object") ? e : document.querySelector(e);
-   if (!t || t.chat) return;
-   this.messages=[];
-   this.send = (m) => {
-      if (typeof m === "string") {
-         this.messages.push({"message":m,"from":this});
-         t.dispatchEvent(new Event("usermessage"));
-      }
-   }
-   t.chat = this;
-   t.setAttribute("chat",'');
-   t.addEventListener("reply",e=>{
-      e.target.insertAdjacentHTML('beforeend','<div class="chat-message"><div class="message-content recieved">'+this.messages[this.messages.length-1].message+'</div></div>');t.parentElement.scroll(0,t.lastChild.offsetTop)
-   });
-   t.addEventListener("usermessage",e=>{
-      e.target.insertAdjacentHTML('beforeend','<div class="chat-message"><div class="message-content sent">'+this.messages[this.messages.length-1].message+'</div></div>');t.parentElement.scroll(0,t.lastChild.offsetTop)
-   });
-   }
+	    
+function Chat(e) {
+  const t = (typeof e === "object") ? e : document.querySelector(e);
+  if (!t || t.chat) return;
+  this.messages = [];
+  this.caseId = t.dataset.caseId;
+
+  this.send = (m) => {
+    if (typeof m === "string") {
+      this.messages.push({"message":m,"from":this});
+      t.dispatchEvent(new Event("usermessage"));
+      this.sendRequest();
+    }
+  }
+
+  this.sendRequest = () => {
+    const chat_history = this.messages.map(m => m.message).join(' ');
+    const encodedHistory = encodeURIComponent(chat_history);
+    const url = `http://109.71.240.121:4932/website_qa?id=${this.caseId}&chat_history=${encodedHistory}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const reply = data.choices[0].text;
+        this.messages.push({"message": reply});
+        t.dispatchEvent(new Event("reply"));
+      });
+  }
+
+  t.chat = this;
+  t.setAttribute("chat", '');
+
+  t.addEventListener("reply", e => {
+    e.target.insertAdjacentHTML('beforeend', '<div class="chat-message"><div class="message-content recieved">' + this.messages[this.messages.length - 1].message + '</div></div>');
+    t.parentElement.scroll(0, t.lastChild.offsetTop);
+  });
+
+  t.addEventListener("usermessage", e => {
+    e.target.insertAdjacentHTML('beforeend', '<div class="chat-message"><div class="message-content sent">' + this.messages[this.messages.length - 1].message + '</div></div>');
+    t.parentElement.scroll(0, t.lastChild.offsetTop);
+  });
+}
+
+document.querySelectorAll('#chats>div').forEach(e => {
+  new Chat(e);
+});
+
+document.querySelector('[chat-button]').addEventListener('click', (e) => {
+  var m = document.querySelector(e.currentTarget.dataset.source);
+  m.value && document.querySelector(e.currentTarget.dataset.target).chat.send(m.value);
+  m.value = '';
+  e.currentTarget.blur();
+});
+
+document.querySelector('[chat-input]').addEventListener('keydown', (e) => {
+  if (e.key === "Enter") {
+    document.querySelector('[chat-button]').click();
+  }
+});
 
    function Bot(e) {
    const jibberRaw = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
