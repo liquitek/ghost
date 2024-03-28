@@ -219,7 +219,37 @@ textarea:not([data-value=""])+label{
     left:1.5rem;
     /*! white-space: nowrap; */
 }
-
+#form form {
+    position: relative;
+}
+#form form .message {
+    position: absolute;
+    inset:0;
+    padding: 2rem;
+    z-index: 1;
+    display: flex;
+}
+#form form .message .inner{
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px solid var(--shadow-color);
+    display: flex;
+    /*! flex-direction: column; */
+    /*! flex:1 1 auto; */
+    background: var(--bs-body-bg);
+    
+    box-shadow: 0 1rem 2rem 0 var(--bs-body-bg);
+    position: relative;
+    /*! margin: auto; */
+    margin: 0 auto;
+}
+form .inner-content {
+    flex:1 1 auto;
+    flex-direction: column;
+    display: flex;
+    padding: 2.5rem;
+    /*! margin: 3rem auto; */
+}
 /****/
 [tabs] * {
      scrollbar-width: thin;
