@@ -301,7 +301,7 @@ form .inner-content {
     width: calc(100vw - (100vw - 100%)*.5);
 }
 
-[tab-button] {
+[tab-button],[in-chat-button] {
     color:#fff;
     text-decoration: none;
     padding:.75rem;
@@ -320,7 +320,10 @@ form .inner-content {
 a[tab-button] {
     color:#fff;
 }
-
+[in-chat-button] {
+    max-width:fit-content;
+    background: var(--bs-body-bg);
+}
 [tab-button][active] {
     background: var(--accent-color);
 }
