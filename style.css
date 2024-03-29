@@ -219,7 +219,41 @@ textarea:not([data-value=""])+label{
     left:1.5rem;
     /*! white-space: nowrap; */
 }
-
+#form form {
+    position: relative;
+}
+#form form .message {
+    position: absolute;
+    inset:0;
+    padding: 2rem;
+    z-index: 1;
+    display: flex;
+}
+#form form .message svg {
+    width:48px;
+    height: 48px;
+    
+}
+#form form .message .inner{
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px solid var(--shadow-color);
+    display: flex;
+    /*! flex-direction: column; */
+    /*! flex:1 1 auto; */
+    background: var(--bs-body-bg);
+    
+    box-shadow: 0 1rem 2rem 0 var(--bs-body-bg);
+    position: relative;
+    /*! margin: auto; */
+    margin: 0 auto;
+}
+form .inner-content {
+    flex:1 1 auto;
+    flex-direction: column;
+    display: flex;
+    padding: 1.5rem .5rem;
+}
 /****/
 [tabs] * {
      scrollbar-width: thin;
@@ -271,7 +305,7 @@ textarea:not([data-value=""])+label{
     width: calc(100vw - (100vw - 100%)*.5);
 }
 
-[tab-button] {
+[tab-button],[in-chat-button] {
     color:#fff;
     text-decoration: none;
     padding:.75rem;
@@ -290,7 +324,10 @@ textarea:not([data-value=""])+label{
 a[tab-button] {
     color:#fff;
 }
-
+[in-chat-button] {
+    max-width:fit-content;
+    background: var(--bs-body-bg);
+}
 [tab-button][active] {
     background: var(--accent-color);
 }
@@ -399,7 +436,7 @@ details {
     display:block;
     top:0;
     bottom:0;
-    left:0.48rem;
+    left:0.33rem;
     right: 0;
     -webkit-border-start: 1px dashed var(--shadow-color) !important;
             border-inline-start: 1px dashed var(--shadow-color) !important;
@@ -1008,6 +1045,15 @@ li.splide__slide {
     .map {
         aspect-ratio: 3/2;
     }
+    #form form .message svg {
+    width:64px;
+    height: 64px;
+    
+}
+    form .inner-content {
+
+    padding:2.5rem;
+}
 }
 @media (min-width:1200px) {
    

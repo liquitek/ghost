@@ -14,7 +14,7 @@
    <!-- Bootstrap CSS -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   <link rel="stylesheet" href="style.css?v=10">
+   <link rel="stylesheet" href="style.css?v=13">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Inter:wght@100..900&amp;display=swap"
@@ -201,6 +201,9 @@
             </div>
             <div class="col-12">
                <form onsubmit="event.preventDefault()">
+                  <div id="form-message" onclick="event.preventDefault()" class="message d-none"><div class="inner"><div class="inner-content"></div><button style="position: absolute;right: 0;top: 0;border: none;background: none;" onclick="document.querySelector('#form-message').classList.toggle('d-none')"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 24 24" style="transform: rotateZ(45deg);color: #fff;">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6" stroke="currentColor" stroke-width=".75"></path>
+                        </svg></button></div></div>
                   <div class="row mb-4/5">
                      <div class="col-12 mb-4/5 mb-lg-0 col-lg-6 position-relative"><input id="preference" type="text"
                            onchange="update(event)" data-value=""><label for="preference">Контакт для связи</label>
@@ -351,7 +354,7 @@
                      <div class="d-flex flex-fill mx-2 ps-0 p-2 py-3"
                         style="border-radius: 1rem;overflow: hidden;border: 1px dashed var(--shadow-color-alpha);background: var(--bs-body-bg);">
                         <div id="chats"
-                           style="flex: 1 0 auto;position:relative;overflow-y: auto;scroll-behavior: smooth;z-index: 1;"
+                           style="max-width:100%;flex: 1 0 auto;position:relative;overflow-y: auto;scroll-behavior: smooth;z-index: 1;padding-bottom:4rem"
                            class="ps-3 pe-2">
                            <div tab-content="" data-id="1" data-case-id="3" active="">
                               <div class="chat-message">
@@ -360,6 +363,13 @@
                            </div>
                            <div tab-content="" data-id="2" data-case-id="2" hidden=""></div>
                            <div tab-content="" data-id="3" data-case-id="1" hidden=""></div>
+                           <div style="position: sticky;top: 100%;overflow-x: auto;display: flex;padding: 0 .5rem;">
+                              <a in-chat-button="" href="#">Расскажи о проекте!</a>
+                              <a in-chat-button="" href="#">Какое было решение?</a>
+                              <a in-chat-button="" href="#">Расскажи о проекте!</a>
+                              <a in-chat-button="" href="#">Какое было решение?</a>
+                              <a in-chat-button="" href="#">Расскажи о проекте!</a>
+                           </div>
                         </div>
                      </div>
 
@@ -420,7 +430,7 @@
                            viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
                               stroke="currentColor" stroke-width=".75"></path>
-                        </svg></div>Точно ли ваше решение уменьшит мои издержки и я не солю деньги «в никуда» в
+                        </svg></div>Точно ли ваше решение уменьшит мои издержки и я не солью деньги «в никуда» в
                      очередной раз?
                   </summary>Прежде чем начинать работу, мы детально просчитаем экономику конкретно для вашей компании.
                   Наше решение точно будет эффективным, а численные показатели мы сможем озвучить после оценки проекта.
@@ -840,20 +850,40 @@
 
       document.querySelector('#form form').addEventListener('submit', function (e) {
          e.preventDefault();
+         var flag=true;
+         var success = '<div style="color: #fff;" class="h2 text-uppercase m-auto mb-0"><div style="font-size:80%">спасибо, ваша заявка принята!</div></div><div class="m-auto mt-0">Наш менеджер свяжется с вами в течение рабочего дня, чтобы уточнить удобное место и время для консультации.</div>';
+         var error = '<div style="color: #fff;" class="h2 text-uppercase m-auto mb-0"><div style="font-size:80%">Ошибка!</div></div><div class="m-auto mt-0">Что-то пошло не так, попробуйте повторить отправку позже.</div>';
+         var emptyFields = '<div style="color: #fff;" class="h2 text-uppercase m-auto mb-0"><div style="font-size:80%">Ошибка!</div></div><div class="m-auto mt-0">Все поля дожны быть заполнены.</div>';
+         
+         const alert = function(arg) {
+            
+            document.querySelector("#form form .message .inner-content").innerHTML=arg;
+            document.querySelector("#form form .message").classList.toggle('d-none');
+         }
+         var t = e.currentTarget.querySelectorAll('input,select,textarea');
+         for (var i=0; i<t.length;i++) {
+            if (!t[i].value) {
+               alert(emptyFields);
+               flag=false;
+               break;
+            }
+         }
+         if (flag) {
+            const chat_id = "-1002009971054";
+            const token = "1376088971:AAF_VeBWXol9f2OEJ4he-Mk4Kus-7-xt7Qw";
+            const text = `Новая заявка!%0A%0AКонтакт для связи: ${document.getElementById('preference').value}%0AПримерный оборот компании в год: ${document.getElementById('income').value}%0AДеятельность, сайт: ${document.getElementById('message').value}`;
 
-         const chat_id = "-4192801350";
-         const token = "1376088971:AAF_VeBWXol9f2OEJ4he-Mk4Kus-7-xt7Qw";
-         const text = `Новая заявка!%0A%0AКонтакт для связи: ${document.getElementById('preference').value}%0AПримерный оборот компании в год: ${document.getElementById('income').value}%0AДеятельность, сайт: ${document.getElementById('message').value}`;
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}`)
+               .then(response => {
+                  if (response.ok) {
+                     alert(success);
+                     document.querySelector('#form form').reset();
+                  } else {
+                     alert(error);
+                  }
+               });
 
-         fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}`)
-            .then(response => {
-               if (response.ok) {
-                  alert('Заявка отправлена!');
-                  document.querySelector('#form form').reset();
-               } else {
-                  alert('Ошибка при отправке заявки. Попробуйте еще раз.');
-               }
-            });
+         }
       });
       document.querySelectorAll("[tabs]").forEach(e => {
          e.addEventListener("click", (e) => {
@@ -939,22 +969,8 @@
          });
       }
 
-      document.querySelectorAll('#chats>div').forEach(e => {
-         new Chat(e);
-      });
 
-      document.querySelector('[chat-button]').addEventListener('click', (e) => {
-         var m = document.querySelector(e.currentTarget.dataset.source);
-         m.value && document.querySelector(e.currentTarget.dataset.target).chat.send(m.value);
-         m.value = '';
-         e.currentTarget.blur();
-      });
 
-      document.querySelector('[chat-input]').addEventListener('keydown', (e) => {
-         if (e.key === "Enter") {
-            document.querySelector('[chat-button]').click();
-         }
-      });
 
       function Bot(e) {
          const jibberRaw = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
@@ -976,14 +992,15 @@
          document.querySelectorAll(e).forEach(e => {
             e.addEventListener("usermessage", e => {
 
-               setTimeout(() => { e.target.chat.messages.push({ "message": jibberOfShape(e.target.chat.messages[e.target.chat.messages.length - 1].message) }); e.target.dispatchEvent(new Event("reply")) }, 1000);
+               e.target.chat.messages.push({ "message": jibberOfShape(e.target.chat.messages[e.target.chat.messages.length - 1].message) });
+               e.target.dispatchEvent(new Event("reply"));
             })
          })
       };
 
       //new Bot('[tab-content]');
 
-      document.querySelectorAll('#chats>div').forEach(e => {
+      document.querySelectorAll('#chats>div[tab-content]').forEach(e => {
          new Chat(e);
       })
 
@@ -998,6 +1015,12 @@
          if (e.key === "Enter") {
             document.querySelector('[chat-button]').click();
          }
+      })
+      document.querySelectorAll('[in-chat-button]').forEach(el=>{
+         el.addEventListener('click',e=>{
+            var m = e.currentTarget.innerText;
+            document.querySelector('[chat][active]').chat.send(m);
+         })
       })
    </script>
    <script>
