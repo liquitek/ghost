@@ -941,14 +941,14 @@
          }
 
          function sendRequest(){
-            const chat_history = this.messages.map(m => m.message).join(' ');
+            const chat_history = t.chat.messages.map(m => m.message).join(' ');
             const encodedHistory = encodeURIComponent(chat_history);
-            const url = `https://api.youcloud.ru/website_qa?id=${this.caseId}&chat_history=${encodedHistory}`;
-            console.log('caseId:', this.caseId);
+            const url = `https://api.youcloud.ru/website_qa?id=${t.chat.caseId}&chat_history=${encodedHistory}`;
+            console.log('caseId:', t.chat.caseId);
             console.log('API URL:', url);
             fetchData(url, (data) => {
                const reply = data.content;
-               this.messages.push({ "message": new XMLSerializer().serializeToString(document.createTextNode(reply)) });
+               t.chat.messages.push({ "message": new XMLSerializer().serializeToString(document.createTextNode(reply)) });
                t.dispatchEvent(new Event("reply"));
             });
          }
