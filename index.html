@@ -957,8 +957,8 @@
          t.setAttribute("chat", '');
          t.addEventListener("pending",()=>{
             t.setAttribute("chat","pending");         
-               sendRequest();
-            t.parentElement.scroll(0,t.scrollHeight)
+            sendRequest();
+            t.parentElement.scroll(0,t.scrollHeight);
          });
          t.addEventListener("reply", e => {
             t.setAttribute("chat",'');
@@ -969,6 +969,7 @@
          t.addEventListener("usermessage", e => {
             e.target.insertAdjacentHTML('beforeend', '<div class="chat-message"><div class="message-content sent">' + this.messages[this.messages.length - 1].message + '</div></div>');
             t.parentElement.scroll(0, t.lastChild.offsetTop);
+            e.target.dispatchEvent(new Event("pending"));
          });
       }
 
