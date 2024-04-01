@@ -364,7 +364,7 @@ a[tab-button] {
     min-width: 4rem;
     border-radius: 1rem;
     border-top-left-radius: 0;
-    animation: spacing .15s linear infinite alternate;
+    animation: spacing .667s linear infinite alternate;
     display: inline-block !important;
     margin-bottom: 4rem !important;
     font-size: 1.25rem;
