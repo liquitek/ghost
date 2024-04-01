@@ -1134,7 +1134,6 @@ li.splide__slide {
 }
 .cooldown {
     animation:sideways .1s linear infinite;
-    filter:blur(.5px);
 }
 @keyframes spacing {
     0% {letter-spacing: 0;}
