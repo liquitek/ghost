@@ -695,6 +695,7 @@ details {
   position: relative;
   transition: transform .2s linear;
   width: auto;
+  border-radius: .25rem;
 }
 .splide .splide__pagination__page:before {
     content:'';
@@ -702,6 +703,11 @@ details {
     background: currentColor;
     width:1.125rem;
     height:3px;
+}
+.splide .splide__pagination__page:hover {
+    opacity: 1;
+    outline: 1px dashed currentColor;
+    box-shadow: 0 0 .66rem var(--shadow-color-alpha);
 }
 .splide .splide__pagination__page.is-active {
   color: var(--shadow-color);
