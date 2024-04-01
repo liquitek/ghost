@@ -767,6 +767,7 @@ details {
   font-size:1.25rem;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: preserve-breaks;
 }
 .chat-message .sent {
   float: right;
