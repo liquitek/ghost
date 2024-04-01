@@ -361,13 +361,15 @@ a[tab-button] {
     content: '...' !important;
     padding: 1rem !important;
     background: var(--accent-color);
-    min-width: 4rem;
+    min-width: 5rem;
     border-radius: 1rem;
     border-top-left-radius: 0;
     animation: spacing .667s linear infinite alternate;
-    display: inline-block !important;
+    display: inline-flex !important;
     margin-bottom: 4rem !important;
     font-size: 1.25rem;
+    text-align: center;
+    justify-content: center;
 }
 summary {
   color:white;
@@ -593,7 +595,7 @@ details {
     margin:1.375rem 0 1.125rem;
 }
 .quote-slider .quote {
-    white-space: preserve-breaks;
+    /*white-space: preserve-breaks;*/
     font-weight: 300;
 }
 .team-slider,.problem-slider {
@@ -1119,11 +1121,11 @@ li.splide__slide {
     filter:blur(.5px);
 }
 @keyframes spacing {
-    from {letter-spacing: 0;text-align: left}
-    to {
+    0% {letter-spacing: 0;}
+   
+    100% {
         letter-spacing: .33rem;
-        text-align: right;
-    }
+
 }
 @keyframes sideways {
     0% {
