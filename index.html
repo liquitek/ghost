@@ -821,13 +821,15 @@
    <script async src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
       onload="sliders()"></script>
    <script>
-      function fetchData(url, callback) {
+      function fetchData(url, callback, body) {
+         var reqType = 'POST';
+         console.log(reqType);
          var xhr = new XMLHttpRequest();
          xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                if (xhr.status === 200) {
                   try {
-                     const response = JSON.parse(xhr.responseText);
+                     const response = JSON.parse(xhr.response);
                      callback(response);
                   } catch (error) {
                      console.error('Error parsing JSON:', error);
@@ -837,8 +839,9 @@
                }
             }
          };
-         xhr.open('GET', url);
-         xhr.send();
+         xhr.open(reqType, url);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(JSON.stringify(body));
       }
    </script>
    <script>
@@ -933,16 +936,21 @@
          }
 
          function sendRequest(){
-            const chat_history = t.chat.messages.map(m=>m.from+":"+m.message).join(' ');
-            const encodedHistory = encodeURIComponent(chat_history);
-            const url = `https://api.youcloud.ru/website_qa?id=${t.chat.caseId}&chat_history=${encodedHistory}`;
+            /*const encodedHistory = encodeURIComponent(t.chat.messages.map(m=>m.from+":"+m.message).join(' '));*/
+
+            const url = 'https://api.youcloud.ru/website_qa'+/*cache bypass,remove if not needed*/'?'+new Date().getTime();
+
             console.log('caseId:', t.chat.caseId);
             console.log('API URL:', url);
             fetchData(url, (data) => {
-               const reply = data.content;
+               const reply = data;
                t.chat.messages.push({ "message": new XMLSerializer().serializeToString(document.createTextNode(reply)),"from":"AI" });
                t.dispatchEvent(new Event("reply"));
-            });
+            },{
+               "id": t.chat.caseId,
+               "chat_history": t.chat.messages.map(m=>m.from+":"+m.message).join(' ')
+               }
+            );
          }
 
          t.chat = this;
