@@ -17,6 +17,7 @@
     --bs-body-color: #fff9;
     --bs-body-color-rgb: 255,255,255;
     --bs-body-bg: #181818;
+    --bs-body-bg-rgb: 24,24,24;
     --bs-emphasis-color-rgb:var(--bs-body-color-rgb);
     --team-slide-width:345px;
     
@@ -253,6 +254,8 @@ form .inner-content {
     flex-direction: column;
     display: flex;
     padding: 1.5rem .5rem;
+    text-align: center;
+    row-gap: .33rem;
 }
 /****/
 [tabs] * {
@@ -272,6 +275,11 @@ form .inner-content {
     [tabs] ::-webkit-scrollbar-thumb {
         background:var(--shadow-color-alpha)
     }
+}
+[tab-content][active]:after {
+  content:'';
+  margin-bottom:3rem;
+  display: block;
 }
 [tab-content]:not([active]) {
     opacity: 0;
@@ -297,14 +305,16 @@ form .inner-content {
 }
 [tab-content][active]:empty {
     bottom: 0;
-    background: url(robot.svg) center/33% auto no-repeat;
+    background: url(robot.svg) center 16%/auto 66% no-repeat;
 }
 [tab-buttons] {
-    overflow-x:hidden;
+    overflow:hidden;
    
     width: calc(100vw - (100vw - 100%)*.5);
 }
-
+[tab-button] *, [in-chat-button] * {
+    pointer-events: none;
+}
 [tab-button],[in-chat-button] {
     color:#fff;
     text-decoration: none;
@@ -345,6 +355,21 @@ a[tab-button] {
     border-radius: .75em;
     box-shadow: 0 0 7.3px 0px var(--shadow-color);
     flex: 0 0 75vh;
+    background: rgb(var(--bs-body-bg-rgb),.2);
+}
+[chat="pending"]::after {
+    content: '...' !important;
+    padding: 1rem !important;
+    background: var(--accent-color);
+    min-width: 5rem;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    animation: spacing .667s linear infinite alternate;
+    display: inline-flex !important;
+    margin-bottom: 4rem !important;
+    font-size: 1.25rem;
+    text-align: center;
+    justify-content: center;
 }
 summary {
   color:white;
@@ -481,7 +506,6 @@ details {
 }
 .fb-slider.splide .splide__pagination__page {
     transform: rotateZ(90deg) !important;
-    margin: 1rem;
 }
 .fb-slider.splide .splide__pagination {
     top:0;
@@ -489,6 +513,9 @@ details {
     right:0;
     left:auto;
     transform: translateX(50%)
+}
+.fb-slider.splide .splide__pagination__page:before {
+    margin:.5rem 0;
 }
 .splide:not(.fb-slider) {
     margin-bottom:4rem;
@@ -570,7 +597,7 @@ details {
     margin:1.375rem 0 1.125rem;
 }
 .quote-slider .quote {
-    white-space: preserve-breaks;
+    /*white-space: preserve-breaks;*/
     font-weight: 300;
 }
 .team-slider,.problem-slider {
@@ -657,20 +684,33 @@ details {
     opacity: 1;
 }
 .splide .splide__pagination__page {
-  background: #fff;
+  background: none !important;
+  color:#fff;
   border: 0;
   border-radius: 0;
   display: inline-block;
-  height: 3px;
-  margin: .5rem;
+  height: auto;
+  padding: .5rem;
   opacity: 1;
-  padding: 0;
   position: relative;
   transition: transform .2s linear;
-  width: 1.125rem;
+  width: auto;
+  border-radius: .25rem;
+}
+.splide .splide__pagination__page:before {
+    content:'';
+    display: block;
+    background: currentColor;
+    width:1.125rem;
+    height:3px;
+}
+.splide .splide__pagination__page:hover {
+    opacity: 1;
+    outline: 1px dashed currentColor;
+    box-shadow: 0 0 .66rem var(--shadow-color-alpha);
 }
 .splide .splide__pagination__page.is-active {
-  background: var(--shadow-color);
+  color: var(--shadow-color);
   transform: none;
   z-index: 1;
   
@@ -727,6 +767,7 @@ details {
   font-size:1.25rem;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: preserve-breaks;
 }
 .chat-message .sent {
   float: right;
@@ -774,6 +815,7 @@ input:focus::placeholder {
   color: white;
   flex: 1 1 0;
   min-width: 0;
+  transition: .2s ease filter;
 }
 .chat input:focus {
   outline: none;
@@ -782,8 +824,25 @@ input:focus::placeholder {
   background: var(--shadow-color);
   padding: .5rem;
   border-radius: .5rem;
+  transition: .66s ease-in-out all;
 }
-
+[chat-button] * {
+    transition: inherit;
+}
+[chat-button]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem  var(--shadow-color-alpha) inset;
+    filter:
+        drop-shadow( -.25rem 0 var(--shadow-color-alpha))
+        drop-shadow( .25rem 0 var(--shadow-color-alpha))
+        drop-shadow( 0 -.25rem var(--shadow-color-alpha))
+        drop-shadow( 0 .25rem var(--shadow-color-alpha));
+}
+[chat-button]:hover * {
+    transform:rotateX(360deg);
+    color:#fff;
+    
+}
 footer::before {
   content: '';
   display: block;
@@ -1012,6 +1071,7 @@ li.splide__slide {
     [tab-buttons] {
     overflow-x:visible;
     width: auto;
+    overflow-y: auto;
     }
     [tab-button] img {
         width:70px;
@@ -1062,4 +1122,38 @@ li.splide__slide {
         padding: 1.25rem 2.5rem 1.66rem;
 
     } 
+}
+
+[scroller].scroller-active {
+    scrollbar-width: none;
+    overflow-x: scroll;
+    cursor: grab;
+}
+[scroller].scroller-active::-webkit-scrollbar {
+    display: none;
+}
+.cooldown {
+    animation:sideways .1s linear infinite;
+}
+@keyframes spacing {
+    0% {letter-spacing: 0;}
+   
+    100% {
+        letter-spacing: .33rem;
+
+}
+@keyframes sideways {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-.25rem);
+        
+    }
+    75% {
+        transform: translateX(.25rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
