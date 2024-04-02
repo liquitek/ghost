@@ -1098,7 +1098,7 @@ li.splide__slide {
 
 }
      [tabs] {
-        aspect-ratio: 2.5;
+        aspect-ratio: 1.95;
         min-height: 500px;
         max-width: 100%;
     }
