@@ -137,7 +137,12 @@ resources: {
               "name": "Anna Kan",
               "position": "Sales Director",
               "description": "<span>10 years in sales, business technologist, crisis manager</span><div class=\"mt-2\">Worked with Club500, Macburgers, Universiade-2019, GlushkoGroup</div>"
-            }
+            },
+            "3": {
+              "name": "Maria Kulesho",
+              "position": "Marketing Director",
+              "description": "<span>5 years in </span><div class=\"mt-2\">Worked with </div>"
+            },
           },
           "contacts": {
             "title": "<em>INFORMATION</em>",
@@ -158,7 +163,8 @@ resources: {
             "address": "St. Petersburg, Kazanskaya St., 7B"
           }
         }
-      },      
+      },
+    },      
 
       
       "ru": {
@@ -293,7 +299,12 @@ resources: {
               "name": "Анна Кан",
               "position": "Директор по продажам",
               "description": "<span>10 лет в продажах, бизнес-технолог, кризис-менеджер</span><div class=\"mt-2\">Работала с Club500, Макбургерс, Универсиада-2019, GlushkoGroup</div>"
-            }
+            },
+            "3": {
+              "name": "Мария Кулешо",
+              "position": "Директор по маркетингу",
+              "description": "<span>UAM, Growth Hacking</span><div class=\"mt-2\"></div>"
+            },
           },
           "contacts": {
             "title": "<em>ИНФОРМАЦИЯ</em>",

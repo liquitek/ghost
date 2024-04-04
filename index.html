@@ -740,20 +740,20 @@
                         </div>
                      </div>
                   </li>
-                  <!-- <li class="splide__slide">
+                  <li class="splide__slide">
                      <div class="team-slide">
                         <div class="slide-bg-layer"></div>
-                        <img loading="lazy" src="exp4_1.png">
+                        <img loading="lazy" src="exp5.png">
                         <div class="slide-layer">
-                           <div class="name">Даниил Вихров</div>
-                           <div class="title">PR и связи с общественностью</div>
-                           <div class="about">
-                              <span>Project manager, PR-директор</span>
-                              <div class="mt-2">Работал с РЖД, ArtMasters, World of Dogs</div>
+                           <div data-i18n="team.2.name" class="name">Мария</div>
+                           <div data-i18n="team.2.position" class="title">Директор по маркетингу</div>
+                           <div data-i18n="team.2.description" class="about">
+                              <span>UAM, Growth Hacking</span>
+                              <div class="mt-2">--</div>
                            </div>
                         </div>
                      </div>
-                  </li> -->
+                  </li>
 
                </ul>
             </div>
@@ -930,8 +930,7 @@
 
       function Chat(e) {
          const t = (typeof e === "object") ? e : document.querySelector(e);
-         console.log('Element:', t);
-         console.log('dataset.caseId:', t.dataset.caseId);
+
          if (!t || t.chat) return;
          this.messages = [];
          this.caseId = t.dataset.caseId;
@@ -953,8 +952,6 @@
 
             const url = 'https://api.youcloud.ru/website_qa'+/*cache bypass,remove if not needed*/'?'+new Date().getTime();
 
-            console.log('caseId:', t.chat.caseId);
-            console.log('API URL:', url);
             fetchData(url, (data) => {
                const reply = data;
                t.chat.messages.push({ "message": new XMLSerializer().serializeToString(document.createTextNode(reply)),"from":"AI" });
