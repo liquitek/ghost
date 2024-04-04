@@ -75,8 +75,14 @@ resources: {
           },
           "cases": {
             "title": "Our <em>neuro-assistant</em> will tell you about our <em>cases!</em>",
-            "description": "We openly describe all our cases. You can ask the neuro-assistant anything you want to know about any of the projects presented."
-          },
+            "description": "We openly describe all our cases. You can ask the neuro-assistant anything you want to know about any of the projects presented.",
+            "1": "Tutor's Assistant.",
+            "2": "RZD",
+            "3": "Typhoon Roasters",
+            "message":'Try "ask a question" in the line at the bottom',
+            "sug1": "Problem",
+            "sug2": "Solution",
+            "sug3": "Result",
           "faq": {
             "title": "Quick <em>answers</em> to <em>frequent</em> questions",
             "0": {
@@ -135,11 +141,18 @@ resources: {
           },
           "contacts": {
             "title": "<em>INFORMATION</em>",
-            "inn": "246525853385",
-            "ogrnip": "320246800036639", 
-            "residency": "Innovation Development Agency",
+            "inn":{
+              "slug":"INN",
+              "number":"246525853385",
+            } ,
+            "ogrnip":{
+              "slug":"OGRNIP",
+              "number":"320246800036639",
+            } ,
+            "arda": "The company is a resident of ARDA",
+            "residency": "«Innovation Development Agency»",
             "phone": "+7 (913) 532-31-67",
-            "email": "info@ascender.space",
+            "email": "gost.agency",
             "privacy_policy": "Privacy Policy",
             "terms_of_service": "Terms of Service",
             "address": "St. Petersburg, Kazanskaya St., 7B"
@@ -217,7 +230,14 @@ resources: {
           },
           "cases": {
             "title": "Наш <em>нейро-ассистент</em> расскажет вам о наших <em>кейсах!</em>",
-            "description": "Мы открыто описываем все наши кейсы. Вы можете спросить у нейро-ассистента всё, что хотите узнать о любом из представленных проектов."
+            "description": "Мы открыто описываем все наши кейсы. Вы можете спросить у нейро-ассистента всё, что хотите узнать о любом из представленных проектов.",
+            "1":"Ассистент Тютора",
+            "2":"РЖД",
+            "3":"Typhoon Roasters",
+            "message":'Попробуйте "задать вопрос" в строке внизу',
+            "sug1":"Проблема",
+            "sug2":"Решение",
+            "sug3":"Результат",
           },
           "faq": {
             "title": "Быстрые <em>ответы</em> на <em>частые</em> вопросы",   
@@ -277,14 +297,21 @@ resources: {
           },
           "contacts": {
             "title": "<em>ИНФОРМАЦИЯ</em>",
-            "inn": "246525853385",
-            "ogrnip": "320246800036639", 
+            "inn":{
+              "slug":"ИНН",
+              "number":"246525853385",
+            } ,
+            "ogrnip":{
+              "slug":"ОГРНИП",
+              "number":"320246800036639",
+            } ,
             "residency": "«Агенства инновационного развития»",
+            "arda": "Компания является резидентом ARDA",
             "phone": "+7 (913) 532-31-67",
-            "email": "info@ascender.space",
+            "email": "info@gost-agency.ru",
             "privacy_policy": "Политика конфинденциальности",
             "terms_of_service": "Условия оферты",
-              "address": "г. Санкт-Петербург, ул. Казанская, д. 7Б"
+            "address": "г. Санкт-Петербург, ул. Казанская, д. 7Б"
             }
           }
         },

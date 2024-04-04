@@ -307,12 +307,12 @@
                         <div style="flex: 1 1 auto;" class="ms-3">
                            <div class="name"><a data-i18n="quotes.1.name" href="https://typhoon.coffee/" target="_blank">Typhoon Roasters</a>
                            </div>
-                           <div data-i18n="quotes.1.position" class="title"></div>
+                           <div data-i18n="quotes.2.position" class="title"></div>
                            <div class="date"></div>
                         </div>
                      </div>
                      <div class="heading"></div>
-                     <div data-i18n="quotes.1.quote" class="quote">Команда GOST AI Solutions сделала невероятно много для нашей компании. Внедрение
+                     <div data-i18n="quotes.2.quote" class="quote">Команда GOST AI Solutions сделала невероятно много для нашей компании. Внедрение
                         их инновационных решений на базе искусственного интеллекта стало ключевым шагом в решении наших
                         проблем. В частности, внедрение нейросотрудника привело к значительному улучшению наших
                         процессов обучения новых сотрудников и управления данными.
@@ -332,7 +332,7 @@
       <div class="container-xxl">
          <div class="row">
             <div class="col col-lg-6 m-auto text-center">
-               <h2 class="pb-2 mb-5">Наш <em>нейро-ассистент</em> расскажет вам о наших <em>кейсах!</em></h2>
+               <h2 data-i18n="cases.title" class="pb-2 mb-5">Наш <em>нейро-ассистент</em> расскажет вам о наших <em>кейсах!</em></h2>
             </div>
             <div class="col-12">
                <div tabs="" class="d-flex flex-lg-row flex-column-reverse">
@@ -341,16 +341,16 @@
                      <div scroller data-breakpoint="992" style="direction: ltr;" class="d-flex flex-lg-column gap-3 p-2 py-4 py-lg-2 ps-4 pe-0"><a href="#"
                            data-id="1" tab-button="" active=""><img loading="lazy" src="c1.jpg" width="71"
                               class="rounded-circle me-3 "><span
-                              style="overflow:hidden;text-overflow:ellipsis">Нейросотрудник-тьютор</span></a><a href="#"
+                              style="overflow:hidden;text-overflow:ellipsis" data-i18n="cases.sug1">Ассистент Тютора</span></a><a href="#"
                            data-id="2" tab-button=""><img loading="lazy"
                               src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Russian_Railways_Logo.svg"
                               width="71" class="rounded-circle me-3 "><span
-                              style="overflow:hidden;text-overflow:ellipsis">РЖД</span></a><a href="#" data-id="3"
+                              style="overflow:hidden;text-overflow:ellipsis" data-i18n="cases.sug1">РЖД</span></a><a href="#" data-id="3"
                            tab-button=""><img loading="lazy" src="3.png" width="71" class="rounded-circle  me-3"><span
-                              style="overflow:hidden;text-overflow:ellipsis">Typhoon Roasters</span></a></div>
+                              style="overflow:hidden;text-overflow:ellipsis" data-i18n="cases.sug1">Typhoon Roasters</span></a></div>
                   </div>
                   <div tabs-panel="" class="d-flex flex-column chat">
-                     <div class="p-4 position-relative bottom-line chathead">Мы открыто описываем все наши кейсы. Вы
+                     <div data-i18n="cases.description" class="p-4 position-relative bottom-line chathead">Мы открыто описываем все наши кейсы. Вы
                         можете спросить у нейро-ассистента всё, что хотите узнать о любом из представленных проектов.
                      </div>
                      <div class="d-flex flex-fill mx-2 ps-0 p-2 py-3"
@@ -367,9 +367,9 @@
                            <div tab-content="" data-id="3" data-case-id="1" hidden=""></div>
                            <div style="position: sticky;top: calc(100% - 3.5rem);overflow: hidden;">
                               <div scroller style="display:flex;padding:0 .5rem;overflow-x: scroll;">
-                               <a in-chat-button="" href="#">Проблема</a>
-                              <a in-chat-button="" href="#">Решение</a>
-                              <a in-chat-button="" href="#">Результат</a>
+                               <a in-chat-button="" data-i18n="cases.sug1" href="#">Проблема</a>
+                              <a in-chat-button="" data-i18n="cases.sug2" href="#">Решение</a>
+                              <a in-chat-button="" data-i18n="cases.sug3" href="#">Результат</a>
                               </div>
                               
                            </div>
@@ -396,13 +396,13 @@
       <div class="container-xxl">
          <div style="align-content: start;" class="row justify-content-center">
             <div class="col text-center">
-               <h2 class="mb-5 pb-3">Быстрые <em>ответы</em> на <em>частые</em> вопросы</h2>
+               <h2 data-i18n="faq.title" class="mb-5 pb-3">Быстрые <em>ответы</em> на <em>частые</em> вопросы</h2>
 
             </div>
             <div class="col-12 col-xl-11 m-auto">
 
                <details open="">
-                  <summary>
+                  <summary data-i18n="faq.0.question">
                      <div icon="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
@@ -410,12 +410,12 @@
                         </svg>
                      </div>
                      Сможете ли вы встроить ИИ в нашу сложную операционную деятельность?
-                  </summary>Да, конечно сможем. Более того, мы её упростим. Прежде чем встраивать ИИ в вашу
-                  деятельность, мы проведём подробный аудит и предложим решения по оптимизации ваших бизнес-процессов,
-                  только после этого будем приступать к интеграции.
+                  </summary><div data-i18n="faq.0.answer">Да, конечно сможем. Более того, мы её упростим. Прежде чем встраивать ИИ в вашу
+                     деятельность, мы проведём подробный аудит и предложим решения по оптимизации ваших бизнес-процессов,
+                     только после этого будем приступать к интеграции.</div>
                </details>
                <details>
-                  <summary>
+                  <summary data-i18n="faq.1.question">
                      <div icon="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
@@ -423,56 +423,56 @@
                         </svg>
                      </div>Сможет ли ИИ адекватно воспринимать всю обратную связь от клиентов? В том числе сложные
                      запросы?
-                  </summary>Да, конечно сможет. ИИ воспринимает информацию на уровне человека со степенью магистра,
+                  </summary><div>Да, конечно сможет. ИИ воспринимает информацию на уровне человека со степенью магистра,
                   более того, интеграция ИИ в ваш бизнес подразумевает, что он также будет учитывать всю внутреннюю
                   информацию вашей компании: скрипты, регламенты, тон общения с клиентом и так далее.
-               </details>
+               </div></details>
                <details>
-                  <summary>
+                  <summary data-i18n="faq.2.question">
                      <div icon=""><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none"
                            viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
                               stroke="currentColor" stroke-width=".75"></path>
                         </svg></div>Точно ли ваше решение уменьшит мои издержки и я не солью деньги «в никуда» в
                      очередной раз?
-                  </summary>Прежде чем начинать работу, мы детально просчитаем экономику конкретно для вашей компании.
-                  Наше решение точно будет эффективным, а численные показатели мы сможем озвучить после оценки проекта.
+                  </summary>
+                  <div data-i18n="faq.2.answer">Прежде чем начинать работу, мы детально просчитаем экономику конкретно для вашей компании. Наше решение точно будет эффективным, а численные показатели мы сможем озвучить после оценки проекта.</div>
                </details>
                <details>
-                  <summary>
+                  <summary data-i18n="faq.3.question">
                      <div icon=""><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none"
                            viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
                               stroke="currentColor" stroke-width=".75"></path>
                         </svg></div>Сможет ли ИИ полностью взаимодействовать с клиентом или ему нужна будет поддержка
                      сотрудника?
-                  </summary>Это зависит от задач, которые будет решать ИИ в вашем бизнесе, и его функционала. Например,
+                  </summary><div data-i18n="faq.3.answer">Это зависит от задач, которые будет решать ИИ в вашем бизнесе, и его функционала. Например,
                   во внутреннем обучении сотрудников и их консультировании по базе знаний компании ИИ не нуждается в
                   помощи, а в работе с отзывами будет нуждаться в контроле человека (но при этом увеличит
-                  производительность сотрудника за ту же единицу времени в 4 раза).
+                  производительность сотрудника за ту же единицу времени в 4 раза).</div>
                </details>
                <details>
-                  <summary>
+                  <summary  data-i18n="faq.4.question">
                      <div icon=""><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none"
                            viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
                               stroke="currentColor" stroke-width=".75"></path>
                         </svg></div>Безопасно ли внедрение ИИ? Не «сломает» ли он мне весь бизнес? Смогу ли я его
                      контролировать?
-                  </summary>Да, внедрение ИИ совершенно безопасно, так как происходит поэтапно и в конкретно выбранном
+                  </summary><div data-i18n="faq.4.answer">Да, внедрение ИИ совершенно безопасно, так как происходит поэтапно и в конкретно выбранном
                   бизнес-процессе. Также важно отметить, что прежде, чем начать работу «в полях», интеграция проходит
                   несколько этапов тестирований, во время которых все ошибки устраняются и вносятся корректировки для
-                  более качественной работы.
+                  более качественной работы.</div>
                </details>
                <details>
-                  <summary>
+                  <summary data-i18n="faq.5.question">
                      <div icon=""><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none"
                            viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12M12 18V6"
                               stroke="currentColor" stroke-width=".75"></path>
                         </svg></div>Гарантируете ли вы безопасность моих данных?
-                  </summary>Да, гарантируем абсолютную безопасность ваших данных, так как мы используем проверенные
-                  серверы по вашим требованиям, на которых установлены локальные модели.
+                  </summary><div data-i18n="faq.5.answer">Да, гарантируем абсолютную безопасность ваших данных, так как мы используем проверенные
+                  серверы по вашим требованиям, на которых установлены локальные модели.</div>
                </details>
             </div>
          </div>
@@ -483,7 +483,7 @@
       <div class="container-xxl">
          <div style="align-content: start;" class="row justify-content-center">
             <div class="col col-md-8 text-center">
-               <h2 class="mb-4/5">Наши <em>партнёры</em></h2>
+               <h2 data-i18n="partners" class="mb-4/5">Наши <em>партнёры</em></h2>
             </div>
             <div class="col-12 d-flex flex-wrap justify-content-center">
                <div class="partner-logo">
@@ -651,7 +651,7 @@
       <div class="container-xxl">
          <div style="align-content: start;" class="row justify-content-center">
             <div class="col col-lg-8 text-center">
-               <h2 class="mb-5">Продукт <em>сложный</em>, но его внедрение
+               <h2 data-i18n="integration_steps.title" class="mb-5">Продукт <em>сложный</em>, но его внедрение
                   будет для вас <em>простым</em>!</h2>
             </div>
             <div class="col-12 overflow-hidden">
@@ -659,22 +659,22 @@
 			"destroy": true}}}' class="splide fb-slider">
                   <div class="splide__track">
                      <ul class="fancy-bullets splide__list">
-                        <li class="splide__slide">Оставьте заявку, мы свяжемся с вами в течение рабочего дня. Провести
+                        <li data-i18n="integration_steps.0" lass="splide__slide">Оставьте заявку, мы свяжемся с вами в течение рабочего дня. Провести
                            консультацию сможем на online-созвоне или на личной встрече.</li>
-                        <li class="splide__slide">На первой встрече менеджер проведет краткую диагностику вашего
+                        <li data-i18n="integration_steps.1" class="splide__slide">На первой встрече менеджер проведет краткую диагностику вашего
                            бизнеса, которая поможет понять, чем мы можем быть для вас полезны. Также подробнее расскажет
                            про услуги интеграции и ответит на ваши вопросы.</li>
-                        <li class="splide__slide">Вторая встреча пройдет с бизнес-аналитиком. Он детально разберет
+                        <li data-i18n="integration_steps.2" class="splide__slide">Вторая встреча пройдет с бизнес-аналитиком. Он детально разберет
                            процессы вашего бизнеса, составит план работ, ресурсных затрат, ЦКП и смету для утверждения.
                         </li>
-                        <li class="splide__slide">После утверждения сметы составим договор, согласуем его и подпишем.
+                        <li data-i18n="integration_steps.3" class="splide__slide">После утверждения сметы составим договор, согласуем его и подпишем.
                         </li>
-                        <li class="splide__slide">После оплаты начнем работу. Запросим у вас всю необходимую информацию
+                        <li data-i18n="integration_steps.4" class="splide__slide">После оплаты начнем работу. Запросим у вас всю необходимую информацию
                            и доступы.</li>
-                        <li class="splide__slide">Закончив интеграцию, продемонстрируем вам финальный продукт, обучим
+                        <li data-i18n="integration_steps.5" class="splide__slide">Закончив интеграцию, продемонстрируем вам финальный продукт, обучим
                            работе с ним, будем поддерживать и дорабатывать продукт до полной автономной работы.</li>
-                        <li class="splide__slide">Дружим еще долгие годы, внедряя ИИ в новые процессы, потому что их
-                           потенциал безграничен :)</li>
+                        <li data-i18n="integration_steps.6" class="splide__slide">Дружим еще долгие годы, внедряя ИИ в новые процессы, потому что их
+                           потенциал безграничен!</li>
                      </ul>
                   </div>
                </div>
@@ -689,7 +689,7 @@
       <div class="container-xxl">
          <div class="row">
             <div class="col-auto col-md-8 m-auto mb-3 text-center">
-               <h2 class="mb-5">Мы собрали команду <em>экспертов</em>, которую хотим с гордостью представить</h2>
+               <h2 data-i18n="team.title" class="mb-5">Мы собрали команду <em>экспертов</em>, которую хотим с гордостью представить</h2>
             </div>
          </div>
          <div
@@ -702,9 +702,9 @@
                         <div class="slide-bg-layer"></div>
                         <img loading="lazy" src="exp1_1.png">
                         <div class="slide-layer">
-                           <div class="name">Севак Петросян</div>
-                           <div class="title">Технический директор</div>
-                           <div class="about">
+                           <div data-i18n="team.0.name" class="name">Севак Петросян</div>
+                           <div data-i18n="team.0.position" class="title">Технический директор</div>
+                           <div data-i18n="team.0.description" class="about">
                               <span>10 лет в IT, инженер, аналитик</span>
                               <div class="mt-2">Работал с PSPCatalog, YogaDog, Traffic Devils<div>
                                  </div>
@@ -716,9 +716,9 @@
                         <div class="slide-bg-layer"></div>
                         <img loading="lazy" src="exp2_1.png">
                         <div class="slide-layer">
-                           <div class="name">Сайковский Иван</div>
-                           <div class="title">Генеральный директор</div>
-                           <div class="about">
+                           <div data-i18n="team.1.name" class="name">Сайковский Иван</div>
+                           <div data-i18n="team.1.position" class="title">Генеральный директор</div>
+                           <div data-i18n="team.1.description" class="about">
                               <span>7 лет в маркетинге, Предприниматель, маркетолог</span>
                               <div class="mt-2">Работал с РЖД, Тинькофф, ArtMasters, ATLAS Agency, Точка ИМПРО<div>
                                  </div>
@@ -730,9 +730,9 @@
                         <div class="slide-bg-layer"></div>
                         <img loading="lazy" src="exp3_1.png">
                         <div class="slide-layer">
-                           <div class="name">Анна Кан</div>
-                           <div class="title">Директор по продажам</div>
-                           <div class="about">
+                           <div data-i18n="team.2.name" class="name">Анна Кан</div>
+                           <div data-i18n="team.2.position" class="title">Директор по продажам</div>
+                           <div data-i18n="team.2.description" class="about">
                               <span>10 лет в продажах, бизнес-технолог, кризис-менеджер</span>
                               <div class="mt-2">Работала с Club500, Макбургерс, Универсиада-2019, GlushkoGroup</div>
                            </div>
@@ -769,23 +769,23 @@
          <div class="row flex-column-reverse flex-lg-row">
             <div class="offset-xl-1 col-auto col-lg-5">
                <div class="vstack">
-                  <div class="pb-3 mb-4 mt-5 info"><em>ИНФОРМАЦИЯ</em></div>
+                  <div data-i18n="contacts.title" class="pb-3 mb-4 mt-5 info"><em>ИНФОРМАЦИЯ</em></div>
                   <div class="hstack mb-4/5 flex-wrap gap-4">
                      <div class="col-auto">
-                        <div class="pb-1 mb-3"><em>ИНН</em></div>
-                        <div>246525853385</div>
+                        <div  class="pb-1 mb-3"><em data-i18n="contacts.inn.slug">ИНН</em></div>
+                        <div data-i18n="contacts.inn.number">246525853385</div>
                      </div>
                      <div class="col-auto">
-                        <div class="pb-1 mb-3"><em>ОГРНИП<em></em></em></div>
-                        <div>320246800036639</div>
+                        <div class="pb-1 mb-3"><em data-i18n="contacts.ogrnip.slug">ОГРНИП<em></em></em></div>
+                        <div data-i18n="contacts.ogrnip.number">320246800036639</div>
                      </div>
                   </div>
-                  <div class="mb-2"><em>Компания является резидентом</em></div>
-                  <div class="mb-5 pb-3">«Агенства инновационного развития»</div>
-                  <div class="mb-1"><em>+7 (913) 532-31-67</em></div>
-                  <div class="mb-1"><em><a href="mailto:info@ascender.space">info@ascender.space</a></em></div>
-                  <div class="mb-1"><a href="#" target="_blank">Политика конфинденциальности</a></div>
-                  <div><a href="#" target="_blank">Условия оферты</a></div>
+                  <div  class="mb-2"><em data-i18n="contacts.arda">Компания является резидентом ARDA</em></div>
+                  <div class="mb-5 pb-3" data-i18n="contacts.residency">«Агенства инновационного развития»</div>
+                  <div class="mb-1"><em data-i18n="contacts.phone">+7 (913) 532-31-67</em></div>
+                  <div class="mb-1"><em><a href="mailto:info@ascender.space" data-i18n="contacts.email">info@gost.agency</a></em></div>
+                  <div class="mb-1"><a href="#" target="_blank" data-i18n="contacts.privacy_policy">Политика конфинденциальности</a></div>
+                  <div><a href="#" target="_blank" data-i18n="contacts.terms_of_service">Условия оферты</a></div>
                </div>
             </div>
             <div class="col-md-10 col-lg-7 col-xl-6 col-xxl-5">
@@ -799,7 +799,7 @@
                   </div>
                   <figcaption class="fs-6"><a
                         href="https://yandex.com/maps/2/saint-petersburg/house/kazanskaya_ulitsa_7b/Z0kYdQVhS0EOQFtjfXVycnxgZg==/?ll=30.321385%2C59.933002&utm_medium=mapframe&utm_source=maps&z=16"
-                        target="_blank">г. Санкт-Петербург, ул. Казанская, д. 7Б</a></figcaption>
+                        target="_blank" data-i18n="contacts.address">г. Санкт-Петербург, ул. Казанская, д. 7Б</a></figcaption>
                </figure>
             </div>
          </div>
@@ -815,16 +815,16 @@
             </a>
             <div class="hstack flex-fill gap-3 me-auto flex-wrap">
                <div class="hstack gap-2 gap-sm-3 gap-lg-5 ms-md-auto me-auto">
-                  <a href="#quotes-slider" class="nav-link">Отзывы</a>
-                  <a href="#cases" class="nav-link">Кейсы</a>
-                  <a href="#faq" class="nav-link ">FAQ</a>
-                  <a href="#team" class="nav-link">Команда</a>
+                  <a href="#quotes-slider" class="nav-link" data-i18n="nav.reviews">Отзывы</a>
+                  <a href="#cases" class="nav-link" data-i18n="nav.cases">Кейсы</a>
+                  <a href="#faq" class="nav-link " data-i18n="nav.faq">FAQ</a>
+                  <a href="#team" class="nav-link" data-i18n="nav.team">Команда</a>
                </div>
                <div class="lang-switcher">
                   <a href="#" class="lang-link px-3 py-2" data-lang="ru" active>RU</a>
                   <a href="#" class="lang-link px-3 py-2 active" data-lang="en">EN</a>
                 </div>
-               <a href="#form" class="btn  fs-6 flex-shrink-0 me-md-auto">Оставить заявку</a>
+               <a href="#form" class="btn  fs-6 flex-shrink-0 me-md-auto" data-i18n="nav.form">Оставить заявку</a>
             </div>
          </nav>
          
