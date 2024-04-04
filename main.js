@@ -12,96 +12,139 @@ resources: {
             "cases": "Cases",
             "faq": "FAQ",
             "team": "Team",
-            "submit": "Submit Application"
+            "form": "Submit an application",
+            "submit": "Discuss the task"
           },
           "hero": {
-            "title": "Integrating AI into Your Company's Business Processes",
-            "subtitle": "Increase profits and reduce costs by implementing AI solutions that automate and optimize your employees' work",
-            "button": "Discuss Task"
+            "title": "Integrating AI into your company's business processes",
+            "subtitle": "We'll increase profits and reduce expenses by implementing AI solutions that automate and optimize your employees' work",
+            "button": "Discuss the task"
           },
           "problems": {
-            "title": "Integrating AI into your company's business processes",
-            
+            "title": "If you're regularly losing profit due to...",
             "0": {
-              "heading": "Procedures for hiring new employees",
-              "text": "The state is constantly growing. You face the challenge of <br> finding quality specialists among the diversity of the labor market. You have to turn to <br> recruiters or individual agencies, <em>spending significant resources on this.</em> ",
-
+              "title": "The process of hiring new employees",
+              "text": "Your staff is constantly growing. You face the difficulty of finding quality specialists among the variety of the labor market. You have to turn to recruiters or specific agencies, <em>spending significant funds in the process.</em>"
             },
-            "1": "Employee adaptations",
-            "2": "Human factor",
-            "3": "High operational costs",
-            "4": "Huge amounts of data",
-            "5": "Spending on linear tasks"
+            "1": {
+              "title": "Employee adaptation",
+              "text": "You have a complex product, there are no clear regulations and training programs. Each employee takes a long time to start their role and does not immediately begin to perform the tasks set, which <em>leads to labor payment costs.</em>"
+            },
+            "2": {
+              "title": "The human factor",
+              "text": "Employees work less efficiently than the business model assumes (fall ill, make mistakes, etc.), cannot handle heavy workloads (communicating with several clients/students at once). <em>Labor payment fund costs are many times higher than the profit brought in by the project team.</em>"
+            },
+            "3": {
+              "title": "High operational costs",
+              "text": "Qualified employees involved in complex business processes require high labor payment, as a result, <em>the overall project margin decreases.</em>"
+            },
+            "4": {
+              "title": "A huge amount of data",
+              "text": "You or your employees cannot make the correct strategic decision because the prediction of the result is influenced by a huge number of business indicators. <em>As a result, you lose profit due to errors in planning.</em>"
+            },
+            "5": {
+              "title": "Expenses on linear tasks",
+              "text": "Your business has <em>many simple processes</em> that can be effectively replaced by a robotic employee, who, unlike a human, does not require extensive resources for maintenance.</em>"
+            }
           },
           "form": {
-            "title": "We'll help you!",
-            "subtitle": "Just submit your application and our manager will contact you...",
+            "title": "We will help you!",
+            "subtitle": "Just leave a request and our manager will contact you: consult on all questions, make a calculation of the costs for implementing our solution and a profit forecast.",
             "contact": "Contact for communication",
-            "revenue": "Approximate company turnover per year",
+            "revenue": "Approximate annual company turnover",
             "activity": "Activity, website",
             "submit": "Send"
           },
           "quotes": {
+            "title": "<em>Your words</em> are our <em>main</em> motivation",
             "0": {
               "name": "Violetta Vasilenko",
-              "position": "Tutor",
-              "quote": "Implementing a neural employee into the educational process has been a great breakthrough for us!"
+              "position": "Tutor, <a href=\"https://t.me/tutor_viola\" class=\"site\" target=\"_blank\">t.me/tutor_viola</a>",
+              "quote": "Implementing a neural employee into the educational process was a very cool breakthrough for us!<br><br>If before we spent 25-30 minutes on one comment-report per lesson, now you can write 5 full comments in this time! Just think: it's 5 (!) times more! In pedagogy, you cannot write just by template, because every tutee is unique! Now the feedback on each of them has become more substantial and accurate.<br>The time spent by a tutor on analyzing the tutorial has decreased several times. This experience really exceeded our expectations and improved the quality of the lesson reports.<br><br>Thank you GOST AI Solutions!"
             },
             "1": {
               "name": "Natalya Mizudo",
               "position": "Psychologist",
-              "quote": "Many thanks to AI Solutions for integrating a neural psychologist-employee into my psychological practice!"
+              "quote": "Many thanks to AI Solutions for integrating a neural employee-psychologist into my psychological practice! This solution made my work many times more efficient. Now I provide my clients with deeper analyses in a very short time and can dedicate more attention to each client and to myself personally. My clients have already noted a significant improvement in the quality of services! Thanks again for the opportunity to use such an innovative technology in my work!"
             },
             "2": {
-              "name": "Typhoon Roasters",
-              "quote": "The GOST AI Solutions team has done incredibly much for our company."
+              "name": "<a href=\"https://typhoon.coffee/\" target=\"_blank\">Typhoon Roasters</a>",
+              "quote": "The team at GOST AI Solutions has done an incredible amount for our company. The implementation of their innovative solutions based on artificial intelligence was a key step in solving our problems. In particular, the introduction of a neural employee led to a significant improvement in our new employee training and data management processes.<br>We are deeply grateful for the professionalism and enthusiasm with which the GOST AI Solutions team approached the work. Working with them was not only pleasant but extremely productive.<br><br>Thank you for your valuable participation in the development of Typhoon Roasters."
             }
           },
-          "cases": "Our neuro-assistant will tell you about our cases!",
-          "faq": {
-            "0": "Can you integrate AI into our complex operational activities?",
-            "1": "Can AI adequately perceive all feedback from customers?",
-            "2": "Is your solution really going to reduce my costs?"
+          "cases": {
+            "title": "Our <em>neuro-assistant</em> will tell you about our <em>cases!</em>",
+            "description": "We openly describe all our cases. You can ask the neuro-assistant anything you want to know about any of the projects presented."
           },
-          "partners": "Our Partners",
+          "faq": {
+            "title": "Quick <em>answers</em> to <em>frequent</em> questions",
+            "0": {
+              "question": "Can you integrate AI into our complex operational activity?",
+              "answer": "Yes, of course, we can. Moreover, we will simplify it. Before integrating AI into your activity, we will conduct a detailed audit and propose solutions for optimizing your business processes, only after that will we proceed with integration."
+            },
+            "1": {
+              "question": "Will AI be able to adequately perceive all feedback from customers? Including complex requests?",
+              "answer": "Yes, of course, it can. AI perceives information at the level of a person with a master's degree, moreover, the integration of AI into your business implies that it will also take into account all the internal information of your company: scripts, regulations, tone of communication with the client, and so on."
+            },
+            "2": {
+              "question": "Are you sure your solution will reduce my costs and I won't just throw money 'down the drain' again?",
+              "answer": "Before starting work, we will calculate the economics specifically for your company in detail. Our solution will definitely be effective, and we will be able to announce the numerical indicators after evaluating the project."
+            },
+            "3": {
+              "question": "Will AI be able to fully interact with the customer or will it require employee support?",
+              "answer": "It depends on the tasks that AI will solve in your business and its functionality. For example, in internal training of employees and consulting them based on the company's knowledge base, AI does not need help, but in working with reviews, it will need human control (while increasing employee productivity for the same unit of time by 4 times)."
+            },
+            "4": {
+              "question": "Is implementing AI safe? Will it not 'break' my entire business? Will I be able to control it?",
+              "answer": "Yes, implementing AI is completely safe, as it happens in stages and in a specifically chosen business process. It is also important to note that before starting work 'in the field', the integration goes through several stages of testing, during which all errors are eliminated and adjustments are made for more quality work."
+            },
+            "5": {
+              "question": "Do you guarantee the security of my data?",
+              "answer": "Yes, we guarantee the absolute security of your data, as we use proven servers according to your requirements, on which local models are installed."
+            }
+          },
+          "partners": "Our <em>partners</em>",
           "integration_steps": {
-            "0": "Submit your application, we will contact you within one business day.",
-            "1": "At the first meeting, the manager will conduct a brief diagnosis of your business.",
-            "2": "The second meeting will be with a business analyst.",
-            "3": "After approving the estimate, we will draw up a contract.",
-            "4": "After payment, we will start work.",
-            "5": "After integration, we will demonstrate the final product to you.",
-            "6": "We'll be friends for many more years, implementing AI into new processes."
+            "title": "The product is <em>complex</em>, but its integration will be <em>simple</em> for you!",
+            "0": "Leave a request, we will contact you within a working day. We can conduct a consultation on an online call or in person.",
+            "1": "At the first meeting, the manager will conduct a brief diagnosis of your business, which will help understand how we can be useful to you. He will also tell you more about integration services and answer your questions.",
+            "2": "The second meeting will be with a business analyst. He will thoroughly examine the processes of your business, draw up a work plan, resource costs, KPIs, and a budget for approval.",
+            "3": "After approving the budget, we will draw up a contract, agree on it and sign it.",
+            "4": "After payment, we will start work. We will request all necessary information and access from you.",
+            "5": "Having completed the integration, we will demonstrate the final product to you, train you on how to use it, and will continue to support and refine the product until it works autonomously.",
+            "6": "We remain friends for many years, integrating AI into new processes, because their potential is limitless :)"
           },
           "team": {
+            "title": "We have gathered a team of <em>experts</em> that we are proud to introduce",
             "0": {
               "name": "Sevak Petrosyan",
               "position": "Technical Director",
-              "description": "10 years in IT, engineer, analyst"
+              "description": "<span>10 years in IT, engineer, analyst</span><div class=\"mt-2\">Worked with PSPCatalog, YogaDog, Traffic Devils<div></div></div>"
             },
             "1": {
               "name": "Saikovsky Ivan",
-              "position": "CEO",
-              "description": "7 years in marketing, entrepreneur, marketer"
+              "position": "CEO", 
+              "description": "<span>7 years in marketing, Entrepreneur, marketer</span><div class=\"mt-2\">Worked with Russian Railways, Tinkoff, ArtMasters, ATLAS Agency, Tochka IMPRO<div></div></div>"
             },
             "2": {
-              "name": "Anna Khan",
+              "name": "Anna Kan",
               "position": "Sales Director",
-              "description": "10 years in sales, business technologist, crisis manager"
+              "description": "<span>10 years in sales, business technologist, crisis manager</span><div class=\"mt-2\">Worked with Club500, Macburgers, Universiade-2019, GlushkoGroup</div>"
             }
           },
           "contacts": {
+            "title": "<em>INFORMATION</em>",
             "inn": "246525853385",
-            "ogrnip": "320246800036639",
-            "residency": "Agency for Innovative Development",
+            "ogrnip": "320246800036639", 
+            "residency": "Innovation Development Agency",
             "phone": "+7 (913) 532-31-67",
             "email": "info@ascender.space",
             "privacy_policy": "Privacy Policy",
             "terms_of_service": "Terms of Service",
-            "address": "St. Petersburg, Kazanskaya Street, 7B"
+            "address": "St. Petersburg, Kazanskaya St., 7B"
           }
         }
-      },
+      },      
 
       
       "ru": {
@@ -243,7 +286,7 @@ resources: {
               "address": "г. Санкт-Петербург, ул. Казанская, д. 7Б"
             }
           }
-        }
+        },
             
 
 }
@@ -289,35 +332,3 @@ languageLinks.forEach(function(link) {
 });
 
 
- function sliders() {
-    let viewport;
-    var p = new Splide('.problem-slider').mount();;
-    p.sync(p);
-    var s = new Splide('.quote-slider').mount();
-    s.sync(s);
-    var b = new Splide('.fb-slider').mount();
-    b.sync(b);
-    var t = new Splide('.team-slider');
-
-    t.on("ready", () => {
-       viewport = window.innerWidth;
-       t.go('+1');
-    })
-
-    onresize = () => {
-       if ((viewport >= 768) && (window.innerWidth < 768)) {
-          t.destroy({ "completely": true });
-          t.mount();
-          t.sync(t);
-
-       }
-       if ((viewport < 768) && (window.innerWidth >= 768)) {
-          t.destroy({ "completely": true });
-          t.mount();
-          t.sync(t);
-
-       }
-    }
-    t.mount();
-    t.sync(t);
- }
