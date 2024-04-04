@@ -127,7 +127,7 @@ resources: {
             "0": {
               "name": "Sevak Petrosyan",
               "position": "Technical Director",
-              "description": "<span>10 years in IT, engineer, analyst</span><div class=\"mt-2\">Worked with Traffic Devils, hundreds of successful fintech and CRM/ERP developments. PSPCatalog, YogaDog ERP<div></div></div>"
+              "description": "<span>10 years in IT, engineer, analyst</span><div class=\"mt-2\">Worked with Traffic Devils, hundreds of successful fintech and CRM/ERP developments. PSPCatalog, YogaDog<div></div></div>"
             },
             "1": {
               "name": "Saikovsky Ivan",
@@ -289,7 +289,7 @@ resources: {
             "0": {
               "name": "Севак Петросян",
               "position": "Технический директор",
-              "description": "<span>10 лет в IT, инженер, аналитик</span><div class=\"mt-2\">Работал с Traffic Devils, сотни успешных разработок в сфере финтех и CRM/ERP. PSPCatalog, YogaDog ERP,<div></div></div>"
+              "description": "<span>10 лет в IT, инженер, аналитик</span><div class=\"mt-2\">Работал с Traffic Devils, сотни успешных разработок в сфере финтех и CRM/ERP. PSPCatalog, YogaDog<div></div></div>"
             },
             "1": {
               "name": "Сайковский Иван",
