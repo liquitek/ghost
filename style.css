@@ -182,7 +182,7 @@ footer .btn:hover {
 }
 .hero-image {
     position: absolute;
-    /* background: url(foto.png) center 40%/max(480px,100%) auto no-repeat; */
+    background: url(foto.png) center 40%/max(480px,100%) auto no-repeat;
     inset: 0;
     left: -6%;
     right: -6%;
@@ -1031,7 +1031,7 @@ li.splide__slide {
       position: absolute;
       inset: -76px auto 76px 75.5%;
       width: 100%;
-      /* background: url(foto.png) center/auto no-repeat; */
+      background: url(foto.png) center/auto no-repeat;
       background-position: center;
       transform: translateX(-50%);
     }
