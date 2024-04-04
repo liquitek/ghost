@@ -4,168 +4,169 @@ i18next
 debug: true,
 fallbackLng: 'en',
 resources: {
-
-    "en": {
-        "translation": {
-          "tittle":"Integrating AI into your company's business processes",
-          "nav": {
-            "reviews": "Reviews",
-            "cases": "Cases",
-            "faq": "FAQ",
-            "team": "Team",
-            "form": "Submit request",
-            "submit": "Discuss the task"
-          },
-          "hero": {
-            "title": "Integrating AI into your company's business processes",
-            "subtitle": "We'll increase profits and reduce expenses by implementing AI solutions that automate and optimize your employees' work",
-            "button": "Discuss the task"
-          },
-          "problems": {
-            "title": "If you're regularly losing profit due to...",
-            "0": {
-              "title": "The process of hiring new employees",
-              "text": "Your staff is constantly growing. You face the difficulty of finding quality specialists among the variety of the labor market. You have to turn to recruiters or specific agencies, <em>spending significant funds in the process.</em>"
-            },
-            "1": {
-              "title": "Employee adaptation",
-              "text": "You have a complex product, there are no clear regulations and training programs. Each employee takes a long time to start their role and does not immediately begin to perform the tasks set, which <em>leads to labor payment costs.</em>"
-            },
-            "2": {
-              "title": "The human factor",
-              "text": "Employees work less efficiently than the business model assumes (fall ill, make mistakes, etc.), cannot handle heavy workloads (communicating with several clients/students at once). <em>Labor payment fund costs are many times higher than the profit brought in by the project team.</em>"
-            },
-            "3": {
-              "title": "High operational costs",
-              "text": "Qualified employees involved in complex business processes require high labor payment, as a result, <em>the overall project margin decreases.</em>"
-            },
-            "4": {
-              "title": "A huge amount of data",
-              "text": "You or your employees cannot make the correct strategic decision because the prediction of the result is influenced by a huge number of business indicators. <em>As a result, you lose profit due to errors in planning.</em>"
-            },
-            "5": {
-              "title": "Expenses on linear tasks",
-              "text": "Your business has <em>many simple processes</em> that can be effectively replaced by a robotic employee, who, unlike a human, does not require extensive resources for maintenance.</em>"
-            }
-          },
-          "form": {
-            "title": "We will help you!",
-            "subtitle": "Just leave a request and our manager will contact you: consult on all questions, make a calculation of the costs for implementing our solution and a profit forecast.",
-            "contact": "Contact for communication",
-            "revenue": "Approximate annual company turnover",
-            "activity": "Activity, website",
-            "submit": "Send"
-          },
-          "quotes": {
-            "title": "<em>Your words</em> are our <em>main</em> motivation",
-            "0": {
-              "name": "Violetta Vasilenko",
-              "position": "Tutor, <a href=\"https://t.me/tutor_viola\" class=\"site\" target=\"_blank\">t.me/tutor_viola</a>",
-              "quote": "Implementing a neural employee into the educational process was a very cool breakthrough for us!<br><br>If before we spent 25-30 minutes on one comment-report per lesson, now you can write 5 full comments in this time! Just think: it's 5 (!) times more! In pedagogy, you cannot write just by template, because every tutee is unique! Now the feedback on each of them has become more substantial and accurate.<br>The time spent by a tutor on analyzing the tutorial has decreased several times. This experience really exceeded our expectations and improved the quality of the lesson reports.<br><br>Thank you GOST AI Solutions!"
-            },
-            "1": {
-              "name": "Natalya Mizudo",
-              "position": "Psychologist",
-              "quote": "Many thanks to AI Solutions for integrating a neural employee-psychologist into my psychological practice! This solution made my work many times more efficient. Now I provide my clients with deeper analyses in a very short time and can dedicate more attention to each client and to myself personally. My clients have already noted a significant improvement in the quality of services! Thanks again for the opportunity to use such an innovative technology in my work!"
-            },
-            "2": {
-              "name": "<a href=\"https://typhoon.coffee/\" target=\"_blank\">Typhoon Roasters</a>",
-              "quote": "The team at GOST AI Solutions has done an incredible amount for our company. The implementation of their innovative solutions based on artificial intelligence was a key step in solving our problems. In particular, the introduction of a neural employee led to a significant improvement in our new employee training and data management processes.<br>We are deeply grateful for the professionalism and enthusiasm with which the GOST AI Solutions team approached the work. Working with them was not only pleasant but extremely productive.<br><br>Thank you for your valuable participation in the development of Typhoon Roasters."
-            }
-          },
-          "cases": {
-            "title": "Our <em>neuro-assistant</em> will tell you about our <em>cases!</em>",
-            "description": "We openly describe all our cases. You can ask the neuro-assistant anything you want to know about any of the projects presented.",
-            "1": "Tutor's Assistant.",
-            "2": "RZD",
-            "3": "Typhoon Roasters",
-            "message":'Try "ask a question" in the line at the bottom',
-            "sug1": "Problem",
-            "sug2": "Solution",
-            "sug3": "Result",
-          },
-          "faq": {
-            "title": "Quick <em>answers</em> to <em>frequent</em> questions",
-            "0": {
-              "question": "Can you integrate AI into our complex operational activity?",
-              "answer": "Yes, of course, we can. Moreover, we will simplify it. Before integrating AI into your activity, we will conduct a detailed audit and propose solutions for optimizing your business processes, only after that will we proceed with integration."
-            },
-            "1": {
-              "question": "Will AI be able to adequately perceive all feedback from customers? Including complex requests?",
-              "answer": "Yes, of course, it can. AI perceives information at the level of a person with a master's degree, moreover, the integration of AI into your business implies that it will also take into account all the internal information of your company: scripts, regulations, tone of communication with the client, and so on."
-            },
-            "2": {
-              "question": "Are you sure your solution will reduce my costs and I won't just throw money 'down the drain' again?",
-              "answer": "Before starting work, we will calculate the economics specifically for your company in detail. Our solution will definitely be effective, and we will be able to announce the numerical indicators after evaluating the project."
-            },
-            "3": {
-              "question": "Will AI be able to fully interact with the customer or will it require employee support?",
-              "answer": "It depends on the tasks that AI will solve in your business and its functionality. For example, in internal training of employees and consulting them based on the company's knowledge base, AI does not need help, but in working with reviews, it will need human control (while increasing employee productivity for the same unit of time by 4 times)."
-            },
-            "4": {
-              "question": "Is implementing AI safe? Will it not 'break' my entire business? Will I be able to control it?",
-              "answer": "Yes, implementing AI is completely safe, as it happens in stages and in a specifically chosen business process. It is also important to note that before starting work 'in the field', the integration goes through several stages of testing, during which all errors are eliminated and adjustments are made for more quality work."
-            },
-            "5": {
-              "question": "Do you guarantee the security of my data?",
-              "answer": "Yes, we guarantee the absolute security of your data, as we use proven servers according to your requirements, on which local models are installed."
-            }
-          },
-          "partners": "Our <em>partners</em>",
-          "integration_steps": {
-            "title": "The product is <em>complex</em>, but its integration will be <em>simple</em> for you!",
-            "0": "Leave a request, we will contact you within a working day. We can conduct a consultation on an online call or in person.",
-            "1": "At the first meeting, the manager will conduct a brief diagnosis of your business, which will help understand how we can be useful to you. He will also tell you more about integration services and answer your questions.",
-            "2": "The second meeting will be with a business analyst. He will thoroughly examine the processes of your business, draw up a work plan, resource costs, KPIs, and a budget for approval.",
-            "3": "After approving the budget, we will draw up a contract, agree on it and sign it.",
-            "4": "After payment, we will start work. We will request all necessary information and access from you.",
-            "5": "Having completed the integration, we will demonstrate the final product to you, train you on how to use it, and will continue to support and refine the product until it works autonomously.",
-            "6": "We remain friends for many years, integrating AI into new processes, because their potential is limitless :)"
-          },
-          "team": {
-            "title": "We have gathered a team of <em>experts</em> that we are proud to introduce",
-            "0": {
-              "name": "Sevak Petrosyan",
-              "position": "Technical Director",
-              "description": "<span>10 years in IT, engineer, analyst</span><div class=\"mt-2\">Worked with Traffic Devils, hundreds of successful fintech and CRM/ERP developments. PSPCatalog, YogaDog<div></div></div>"
-            },
-            "1": {
-              "name": "Saikovsky Ivan",
-              "position": "CEO", 
-              "description": "<span>7 years in marketing, Entrepreneur, marketer</span><div class=\"mt-2\">Worked with Russian Railways, Tinkoff, ArtMasters, ATLAS Agency, Tochka IMPRO<div></div></div>"
-            },
-            "2": {
-              "name": "Anna Kan",
-              "position": "Sales Director",
-              "description": "<span>10 years in sales, business technologist, crisis manager</span><div class=\"mt-2\">Worked with Club500, Macburgers, Universiade-2019, GlushkoGroup</div>"
-            },
-            "3": {
-              "name": "Maria Kulesho",
-              "position": "Marketing Director",
-              "description": "<span>5 years in </span><div class=\"mt-2\">Worked with </div>"
-            },
-          },
-          "contacts": {
-            "title": "<em>INFORMATION</em>",
-            "inn":{
-              "slug":"INN",
-              "number":"246525853385",
-            } ,
-            "ogrnip":{
-              "slug":"OGRNIP",
-              "number":"320246800036639",
-            } ,
-            "arda": "The company is a resident of ARDA",
-            "residency": "«Innovation Development Agency»",
-            "phone": "+7 (913) 532-31-67",
-            "email": "gost.agency",
-            "privacy_policy": "Privacy Policy",
-            "terms_of_service": "Terms of Service",
-            "address": "St. Petersburg, Kazanskaya St., 7B"
-          },
-        },
+  "en": {
+    "translation": {
+      "placeholder":"Ask any question about the project!",
+      "tittle":"Revolutionize Your Business with AI",
+      "nav": {
+        "reviews": "Reviews",
+        "cases": "Cases",
+        "faq": "FAQs",
+        "team": "Team",
+        "form": "Get Started",
+        "submit": "Let's Talk Solutions"
       },
-          
+      "hero": {
+        "title": "Empower Your Business with AI",
+        "subtitle": "Transform operations and skyrocket profits with our AI solutions. Automate, enhance decision-making, and surpass competitors.",
+        "button": "Let's Talk Solutions"
+      },
+      "problems": {
+        "title": "Tackle Your Challenges with AI:",
+        "0": {
+          "title": "Streamline Hiring",
+          "text": "Cut recruitment costs with AI-driven talent acquisition, finding quality specialists quickly and efficiently."
+        },
+        "1": {
+          "title": "Accelerate Onboarding",
+          "text": "Fast-track employee ramp-up with AI, reducing training time and costs."
+        },
+        "2": {
+          "title": "Minimize Human Error",
+          "text": "Enhance efficiency and reduce mistakes with AI oversight and automation."
+        },
+        "3": {
+          "title": "Slash Operational Costs",
+          "text": "Deploy AI for complex tasks to save on expenses and improve margins."
+        },
+        "4": {
+          "title": "Tame Big Data",
+          "text": "Use AI to navigate and analyze vast datasets for accurate strategic decisions."
+        },
+        "5": {
+          "title": "Automate Routine Tasks",
+          "text": "Let AI handle mundane activities, reallocating resources towards growth."
+        }
+      },
+      "form": {
+        "title": "Your Success, Our Commitment",
+        "subtitle": "Submit your project today for a tailor-made AI integration plan. We ensure your business thrives.",
+        "contact": "Contact for communication",
+        "revenue": "Approximate annual company turnover",
+        "activity": "Activity, website",
+        "submit": "Send"
+      },
+      "quotes": {
+        "title": "Success Stories from Our Clients",
+        "0": {
+          "name": "Violetta Vasilenko",
+          "position": "Tutor, t.me/tutor_viola",
+          "quote": "Integrating AI was a breakthrough, enhancing our educational process and quality of lesson reports. Thank you!"
+        },
+        "1": {
+          "name": "Natalya Mizudo",
+          "position": "Psychologist",
+          "quote": "AI Solutions revolutionized my practice, allowing deeper analyses and better client care. Grateful for this technology!"
+        },
+        "2": {
+          "name": "Typhoon Roasters",
+          "quote": "AI integration improved our training and data management, marking a key step in solving our challenges. Thank you!"
+        }
+      },
+      "cases": {
+        "title": "Discover Our Impact",
+        "description": "Explore our case studies. Our AI assistant is here to provide insights into our transformative projects.",
+        "1": "Tutor's Assistant",
+        "2": "RZD",
+        "3": "Typhoon Roasters",
+        "message": "Ask a question",
+        "sug1": "Problem",
+        "sug2": "Solution",
+        "sug3": "Result"
+      },
+      "faq": {
+        "title": "Answers at Your Fingertips",
+        "0": {
+          "question": "Can AI integrate into complex operations?",
+          "answer": "Yes, we streamline and simplify with detailed audits and tailored solutions."
+        },
+        "1": {
+          "question": "Will AI understand complex customer feedback?",
+          "answer": "Absolutely. Our AI solutions are designed to handle complex requests with precision."
+        },
+        "2": {
+          "question": "Will this solution reduce my costs?",
+          "answer": "We conduct a detailed cost-benefit analysis to ensure our solutions are economically viable for your company."
+        },
+        "3": {
+          "question": "Can AI fully interact with customers?",
+          "answer": "AI can independently handle many tasks, though some areas may benefit from human oversight."
+        },
+        "4": {
+          "question": "Is AI implementation safe for my business?",
+          "answer": "Absolutely. We prioritize safety and efficiency through thorough testing and staged implementation."
+        },
+        "5": {
+          "question": "Is my data secure with AI?",
+          "answer": "Data security is guaranteed. We use proven servers and local models to protect your information."
+        }
+      },
+      "partners": "Partners in Innovation",
+      "integration_steps": {
+        "title": "Seamless AI Integration Journey",
+        "0": "Contact us to begin. We're here to consult and guide you every step of the way.",
+        "1": "Initial meeting: We'll identify how AI can benefit your business and outline our services.",
+        "2": "Deep dive: Our analysts will craft a detailed plan, setting clear KPIs and budget.",
+        "3": "Budget approval leads to contract drafting and signing.",
+        "4": "Post-payment, we start the integration, requesting necessary information and access.",
+        "5": "We demonstrate the final product, provide training, and offer ongoing support.",
+        "6": "We build lasting partnerships, continuously integrating AI into new processes."
+      },
+      "team": {
+        "title": "Meet the Minds Behind the Magic",
+        "0": {
+          "name": "Sevak Petrosyan",
+          "position": "Technical Director",
+          "description": "10 years in IT. Expertise in fintech and CRM/ERP. Worked with Traffic Devils, PSPCatalog, YogaDog."
+        },
+        "1": {
+          "name": "Saikovsky Ivan",
+          "position": "CEO",
+          "description": "7 years in marketing. Collaborations with Russian Railways, Tinkoff. A pioneer in innovative marketing strategies."
+        },
+        "2": {
+          "name": "Anna Kan",
+          "position": "Sales Director",
+          "description": "A decade in sales. Known for strategic business solutions. Worked with Club500, Macburgers."
+        },
+        "3": {
+          "name": "Maria Kulesho",
+          "position": "Marketing Director",
+          "description": "5 years leading marketing initiatives. A track record of successful campaigns."
+        }
+      },
+      "contacts": {
+        "title": "Connect With Us",
+        "inn": {
+          "slug": "INN",
+          "number": "246525853385"
+        },
+        "ogrnip": {
+          "slug": "OGRNIP",
+          "number": "320246800036639"
+        },
+        "arda": "Proud resident of ARDA",
+        "residency": "Innovation Development Agency",
+        "phone": "+7 (913) 532-31-67",
+        "email": "gost.agency",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "address": "St. Petersburg, Kazanskaya St., 7B"
+      }
+    }
+  },
+
+
 
       
       "ru": {
