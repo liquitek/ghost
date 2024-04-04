@@ -124,7 +124,38 @@ footer .btn:hover {
 .nav-link:hover{
   color:#fff;
 }
-
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    background: #1E1E1E;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  .lang-link {
+    color: #aaa; /* Делаем цвет текста менее ярким */
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.75rem;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .lang-link:hover {
+    color: #fff; /* Цвет текста при наведении */
+    background: linear-gradient(145deg, #232323, #1c1c1c);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+               -2px -2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  .lang-link.active {
+    color: #fff; /* Цвет текста активного языка */
+    background: #333; /* Более темный фон для активного языка */
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+  }
 /* utils */
 
 .mb-7 {
@@ -163,7 +194,6 @@ footer .btn:hover {
     flex-grow: 0;
     flex-basis: 300px;
 }
-
 
 
 /* form */
@@ -949,6 +979,17 @@ li.splide__slide {
 
     }
 }
+.offcanvas .lang-switcher {
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    font-size: 1rem; /* Adjust the font size as needed */
+    width: fit-content;
+
+}
+
+.offcanvas .lang-link {
+    font-size: 1rem; /* Adjust the font size as needed */
+}
 @media (min-width:768px) {
     :root {
         font-size:1rem;
@@ -1123,7 +1164,11 @@ li.splide__slide {
 
     } 
 }
-
+@media (max-width:992){
+    .offcanvas .lang-switcher {
+        margin-top: 1rem;
+    }
+}
 [scroller].scroller-active {
     scrollbar-width: none;
     overflow-x: scroll;

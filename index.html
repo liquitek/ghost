@@ -20,40 +20,11 @@
    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Inter:wght@100..900&amp;display=swap"
       rel="stylesheet">
    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-   <script>
-      function sliders() {
-         let viewport;
-         var p = new Splide('.problem-slider').mount();;
-         p.sync(p);
-         var s = new Splide('.quote-slider').mount();
-         s.sync(s);
-         var b = new Splide('.fb-slider').mount();
-         b.sync(b);
-         var t = new Splide('.team-slider');
-
-         t.on("ready", () => {
-            viewport = window.innerWidth;
-            t.go('+1');
-         })
-
-         onresize = () => {
-            if ((viewport >= 768) && (window.innerWidth < 768)) {
-               t.destroy({ "completely": true });
-               t.mount();
-               t.sync(t);
-
-            }
-            if ((viewport < 768) && (window.innerWidth >= 768)) {
-               t.destroy({ "completely": true });
-               t.mount();
-               t.sync(t);
-
-            }
-         }
-         t.mount();
-         t.sync(t);
-      }
-   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.10/i18next.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/1.3.2/i18nextHttpBackend.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.2/i18nextBrowserLanguageDetector.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
+   <script src="main.js"></script>
 </head>
 
 <body>
@@ -90,7 +61,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="#team">Команда</a>
                      </li>
-                  </ul><a href="#form" class="btn px-0 mt-4 me-auto fs-5 d-lg-none">Оставить заявку</a>
+                  </ul>
+                  <div class="lang-switcher"> <a href="#" class="lang-link px-3 py-2 active" data-lang="ru">RU</a> <a href="#" class="lang-link px-3 py-2" data-lang="en">EN</a> </div>
+                  <a href="#form" class="btn px-0 mt-4 me-auto fs-5 d-lg-none">Оставить заявку</a>
                </div><a href="#form" class="btn ms-auto d-none d-lg-inline-flex fs-6">Обсудить задачу</a>
             </div>
          </div>
@@ -130,7 +103,7 @@
                   <li class="splide__slide">
                      <div class="slide">
                         <div class="heading">Процедуры найма новых сотрудников</div>
-                        <div class="text">Штат постоянно увеличивается. Сталкиваетесь со сложностью
+                        <div data-i18n="problems.0.text" class="text">Штат постоянно увеличивается. Сталкиваетесь со сложностью
                            поиска качественных специалистов среди многообразия рынка труда. Приходится обращаться к
                            рекрутерам или отдельным агентствам, <em>тратя на это немалые средства.</em>
                         </div>
@@ -812,9 +785,14 @@
                   <a href="#faq" class="nav-link ">FAQ</a>
                   <a href="#team" class="nav-link">Команда</a>
                </div>
+               <div class="lang-switcher">
+                  <a href="#" class="lang-link px-3 py-2  active" data-lang="ru" active>RU</a>
+                  <a href="#" class="lang-link px-3 py-2 " data-lang="en">EN</a>
+                </div>
                <a href="#form" class="btn  fs-6 flex-shrink-0 me-md-auto">Оставить заявку</a>
             </div>
          </nav>
+         
       </div>
 
    </footer>
@@ -843,7 +821,7 @@
          xhr.send(JSON.stringify(body));
       }
    </script>
-   <script>
+<!-- <script>!function(window){const host="https://app.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJqb3NoX2xpdGUzXzIwMjMwNzE0Iiwidm9p%0D%0AY2UiOnsidm9pY2VfaWQiOiJkMGRiOTM4YzYxYzU0YTJiYmExOTdlMzZkZjQwMzc0ZiJ9LCJwcmV2%0D%0AaWV3SW1nIjoiaHR0cHM6Ly9maWxlcy5oZXlnZW4uYWkvYXZhdGFyL3YzLzEwMDYzYzc0M2YxMTQ3%0D%0AMjJhYjY1MzhiMzU5MDVjNTFjXzMwMTMvcHJldmlld190YXJnZXQud2VicCIsIm5lZWRSZW1vdmVC%0D%0AYWNrZ3JvdW5kIjpmYWxzZSwidXNlcm5hbWUiOiJlYTc5MGI4MzUxODQ0NmMyODUwYmQyN2I0OGZi%0D%0ANzZiOCJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 40px;\n    bottom: 40px;\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\n    transition: all linear 0.1s;\n    overflow: hidden;\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\n    border: 0;\n    border-radius: 8px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>   <script> -->
 
       document.querySelector('#form form').addEventListener('submit', function (e) {
          e.preventDefault();
