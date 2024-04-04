@@ -984,7 +984,7 @@ li.splide__slide {
     align-items: center; /* Centers items vertically */
     font-size: 1rem; /* Adjust the font size as needed */
     width: fit-content;
-
+    margin-right: 1rem;
 }
 
 .offcanvas .lang-link {
