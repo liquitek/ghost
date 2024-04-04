@@ -17,7 +17,7 @@ resources: {
         "submit": "Let's Talk Solutions"
       },
       "hero": {
-        "title": "Empower Your Business with AI",
+        "title": "Empower Your Business with Cutting-Edge AI Solutions",
         "subtitle": "Transform operations and skyrocket profits with our AI solutions. Automate, enhance decision-making, and surpass competitors.",
         "button": "Let's Talk Solutions"
       },
