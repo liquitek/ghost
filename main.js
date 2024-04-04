@@ -303,32 +303,36 @@ function updateTexts() {
     });
   }
   
-document.addEventListener('DOMContentLoaded', function() {
-// Select all elements with the 'language-link' class
-var languageLinks = document.querySelectorAll('.lang-link');
-
-languageLinks.forEach(function(link) {
-   // Attach a click event listener to each link
-   link.addEventListener('click', function(e) {
-       // Prevent the default link action
-       e.preventDefault();
-
-       // Change the language to the one specified in the 'data-lang' attribute
-       var lang = this.getAttribute('data-lang');
-       i18next.changeLanguage(lang, () => {
-        updateTexts(); // Обновляем тексты после смены языка
-       });
-
-
-       // Remove the 'active' class from all links
-       languageLinks.forEach(function(lnk) {
-           lnk.classList.remove('active');
-       });
-
-       // Add the 'active' class to the clicked link
-       this.classList.add('active');
-   });
-});
-});
+  function updateTexts() {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const keys = el.getAttribute('data-i18n').split(';');
+      let text = '';
+      keys.forEach(key => {
+        text += i18next.t(key.trim()) + ' ';
+      });
+      el.innerHTML = text.trim();
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var languageLinks = document.querySelectorAll('.lang-link');
+  
+    languageLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var lang = this.getAttribute('data-lang');
+        i18next.changeLanguage(lang, () => {
+          updateTexts();
+        });
+        languageLinks.forEach(function(lnk) {
+          lnk.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  
+    updateTexts(); // Добавьте эту строку, чтобы сразу применить переводы на английском языке
+  });
 
 
