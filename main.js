@@ -2,18 +2,18 @@ i18next
 .use(i18nextBrowserLanguageDetector)
 .init({
 debug: true,
-lng: 'en', // Добавьте эту строку, чтобы установить английский язык по умолчанию
 fallbackLng: 'en',
 resources: {
 
     "en": {
         "translation": {
+          "tittle":"Integrating AI into your company's business processes",
           "nav": {
             "reviews": "Reviews",
             "cases": "Cases",
             "faq": "FAQ",
             "team": "Team",
-            "form": "Submit an application",
+            "form": "Submit request",
             "submit": "Discuss the task"
           },
           "hero": {
@@ -150,6 +150,7 @@ resources: {
       
       "ru": {
         "translation": {
+          "tittle":"GOST AI Solutions - Маркетинг и Интеграции AI",
           "nav": {
             "reviews": "Отзывы",
             "cases": "Кейсы",
