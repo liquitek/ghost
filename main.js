@@ -83,6 +83,7 @@ resources: {
             "sug1": "Problem",
             "sug2": "Solution",
             "sug3": "Result",
+          },
           "faq": {
             "title": "Quick <em>answers</em> to <em>frequent</em> questions",
             "0": {
@@ -161,8 +162,8 @@ resources: {
             "privacy_policy": "Privacy Policy",
             "terms_of_service": "Terms of Service",
             "address": "St. Petersburg, Kazanskaya St., 7B"
-          }
-        }
+          },
+        },
       },
     },      
 
@@ -323,8 +324,8 @@ resources: {
             "privacy_policy": "Политика конфинденциальности",
             "terms_of_service": "Условия оферты",
             "address": "г. Санкт-Петербург, ул. Казанская, д. 7Б"
-            }
-          }
+            },
+          },
         },
             
 
