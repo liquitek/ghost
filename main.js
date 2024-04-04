@@ -2,6 +2,7 @@ i18next
 .use(i18nextBrowserLanguageDetector)
 .init({
 debug: true,
+lng: 'en', // Добавьте эту строку, чтобы установить английский язык по умолчанию
 fallbackLng: 'en',
 resources: {
 
