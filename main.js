@@ -305,7 +305,7 @@ resources: {
             "3": {
               "name": "Мария Кулешо",
               "position": "Директор по маркетингу",
-              "description": "<span>UAM, Growth Hacking</span><div class=\"mt-2\"></div>"
+              "description": "<span>5 лет в маркетинге.</span><div class=\"mt-2\"></div>"
             },
           },
           "contacts": {
