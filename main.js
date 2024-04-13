@@ -126,7 +126,7 @@ resources: {
         "title": "Meet the Minds Behind the Magic",
         "0": {
           "name": "Sevak Petrosyan",
-          "position": "Technical Director",
+          "position": "СТО",
           "description": "10 years in IT. Expertise in fintech and CRM/ERP. Worked with Traffic Devils, PSPCatalog, YogaDog."
         },
         "1": {
@@ -143,6 +143,11 @@ resources: {
           "name": "Maria Kulesho",
           "position": "Marketing Director",
           "description": "5 years leading marketing initiatives. A track record of successful campaigns."
+        },
+        "4": {
+          "name": "Daniel Vikhrov",
+          "position": "Public Relations and Community Engagement",
+          "description": "Worked with RJD (Russian Railways), ArtMasters, World of Dogs"
         }
       },
       "contacts": {
