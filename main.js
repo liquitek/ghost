@@ -312,6 +312,11 @@ resources: {
               "position": "Директор по маркетингу",
               "description": "<span>5 лет в маркетинге.</span><div class=\"mt-2\"></div>"
             },
+            "4": {
+              "name": "Даниил Вихров",
+              "position": "PR и связи с общественностью",
+              "description": "<span>Project manager, PR-директор</span><div class=\"mt-2\">Работал с РЖД, ArtMasters, World of Dogs</div>"
+            },
           },
           "contacts": {
             "title": "<em>ИНФОРМАЦИЯ</em>",
